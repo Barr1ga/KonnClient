@@ -1,0 +1,39 @@
+﻿@inject ILogger<SignUpForm> Logger
+
+<EditForm Model="SignUpData" OnSubmit="Submit" FormName="SignUpModel">
+    <div class="space-y-[4px]">
+        <label>
+            Email
+        </label>
+        <InputText id="email" @bind-Value="SignUpData.Email" placeholder="you@email.com" />
+    </div>
+
+    <div class="space-y-[4px]">
+        <label>
+            Email
+        </label>
+        <InputText id="password" @bind-Value="SignUpData.Password" placeholder="******" />
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    public SignUpModel? SignUpData { get; set; } = new SignUpModel();
+
+    public class SignUpModel
+    {
+        public string? Email { get; set; } = string.Empty;
+        public string? Password { get; set; } = string.Empty;
+    }
+
+    protected override void OnInitialized() => SignUpData ??= new();
+
+    private void Submit() 
+    {
+        Logger.LogInformation("Id = {Id}", SignUpData?.Email);
+    }
+}

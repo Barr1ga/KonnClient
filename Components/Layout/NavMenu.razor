@@ -1,30 +1,13 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">KonnClient</a>
+﻿<div class="flex flex-row items-center justify-between px-4 py-4 w-full ">
+    <h1 class="text-lg font-bold flex-1">Konn</h1>
+
+    <div class="flex items-center space-x-4">
+        <NavLink class="nav-link" href="workspaces" Match="NavLinkMatch.All">
+            <span class="py-[4px] px-[8px] text-pText/50 hover:text-pText font-medium" aria-hidden="true">Explore Workspaces</span>
+        </NavLink>
+
+        <NavLink class="bg-tBackground font-semibold pt-[4px] pb-[6px] px-[12px] rounded-full hover:bg-qBackground text-pText hover:text-qText transition ease-in-out" href="sign-in" Match="NavLinkMatch.All">
+            <span class="" aria-hidden="true">Sign In</span>
+        </NavLink>
     </div>
 </div>
-
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
-

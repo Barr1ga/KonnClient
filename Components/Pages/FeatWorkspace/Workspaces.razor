@@ -1,0 +1,33 @@
+﻿@page "/workspaces"
+@rendermode InteractiveServer
+@inject ILogger<Workspaces> Logger
+
+<PageTitle>Explore Workspaces</PageTitle>
+
+<div class="space-y-[24px]">
+    <div class="space-y-[8px]">
+        <h1 class="text-[36px] font-bold">Workspaces</h1>
+        <span class="">Every week, we feature some of our favourite workspaces of different users. You can also check out some great calendars from the community.</span>
+    </div>
+
+    <div class="space-y-[2px]">
+    @foreach (var workspace in WorkspaceList)
+    {
+        <WorkspaceRow Workspace="@workspace" />
+    }
+    </div>
+</div>
+
+@code {
+    IEnumerable<Workspace> WorkspaceList { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        WorkspaceList = MockWorkspaceService.Workspaces;
+
+        foreach (var workspace in WorkspaceList)
+        {
+            Logger.LogInformation($"Id: {workspace.Id}, Name: {workspace.Name}, UserId: {workspace.UserId}, Description: {workspace.Description}, Image: {workspace.Image}, IsDeleted: {workspace.IsDeleted}, CreatedAt: {workspace.CreatedAt}, UpdatedAt: {workspace.UpdatedAt}");
+        }
+    }
+}

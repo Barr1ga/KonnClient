@@ -1,0 +1,103 @@
+﻿<button class="@GetButtonCssClass()" @onclick="HandleClick" disabled="@IsDisabled">
+    @if (Loading)
+    {
+        <span class="spinner-border" style="border-color: @SpinnerColor"></span>
+    }
+
+    @if (StartIcon != null && !IsIconOnly)
+    {
+        <span class="start-icon">@StartIcon</span>
+    }
+
+    @if (!Loading && !IsIconOnly)
+    {
+        <span class="@GetTextCssClass() font-medium">@Text</span>
+    }
+
+    @if (EndIcon != null)
+    {
+        <span class="end-icon">@EndIcon</span>
+    }
+</button>
+
+@code {
+    [Parameter] public bool Circular { get; set; } = false;
+    [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public string Type { get; set; } = "primary";
+    [Parameter] public bool Bordered { get; set; } = false;
+    [Parameter] public string Text { get; set; }
+    [Parameter] public RenderFragment StartIcon { get; set; }
+    [Parameter] public RenderFragment EndIcon { get; set; }
+    [Parameter] public bool Disabled { get; set; } = false;
+    [Parameter] public bool Loading { get; set; } = false;
+    [Parameter] public bool Danger { get; set; } = false;
+    [Parameter] public bool Success { get; set; } = false;
+    [Parameter] public string SpinnerColor { get; set; } = "#fff";
+    [Parameter] public bool IsIconOnly { get; set; } = false;
+    [Parameter] public string Size { get; set; } = "md";
+    [Parameter] public string Justify { get; set; } = "center";
+    [Parameter] public string ClassName { get; set; } = "";
+    [Parameter] public bool Highlight { get; set; } = false;
+
+    private string GetButtonCssClass()
+    {
+        var btnColor = Type switch
+        {
+            "primary" => Success ? "bg-success" : Danger ? "bg-danger" : "bg-primary",
+            "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-tBackground border-border",
+            _ => "bg-pBackground border-border"
+        };
+
+        var btnSize = Size switch
+        {
+            "sm" => "px-3 py-1",
+            "md" => "px-[14px] py-[8px]",
+            "lg" => "p-4",
+            _ => "px-3 py-2"
+        };
+
+        var iconOnlySize = Size switch
+        {
+            "sm" => "p-1",
+            "md" => "p-2",
+            "lg" => "p-4",
+            _ => "p-2"
+        };
+
+        var circular = Circular ? "rounded-full" : "rounded-[8px]";
+        var disabled = (Disabled ? "opacity-50" : "");
+        var bordered = Bordered ? "border" : "";
+
+        return $"{btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {ClassName}";
+    }
+
+
+    private string GetTextCssClass()
+    {
+        var btnTextSize = Size switch
+        {
+            "sm" => "text-xs",
+            "md" => "font-medium",
+            "lg" => "text-lg",
+            _ => "text-sm"
+        };
+
+        var btnTextColor = Type switch
+        {
+            "primary" => "text-white",
+            "secondary" => Success ? "text-success" : Danger ? "text-danger" : "text-primary",
+            _ => "text-primary"
+        };
+
+        return $"{btnTextSize} {btnTextColor}";
+    }
+
+    private bool IsDisabled => Loading || Disabled;
+
+    private async Task HandleClick()
+    {
+        if (IsDisabled)
+            return;
+        await OnClick.InvokeAsync();
+    }
+}

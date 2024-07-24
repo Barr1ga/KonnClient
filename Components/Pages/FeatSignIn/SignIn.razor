@@ -1,0 +1,32 @@
+﻿@page "/sign-in"
+@inject ILogger<SignIn> Logger
+
+<PageTitle>Sign In</PageTitle>
+
+<div class="space-y-[16px]">
+    <div class="space-y-[8px]">
+        <h1 class="text-[24px] font-bold">
+            Welcome to Konn
+        </h1>
+        <span class="">
+            Please sign in or sign up below.
+        </span>
+    </div>
+
+    <SignInForm />
+
+
+    <div class="flex space-x-[4px]">
+        <span class="text-sText">
+            Dont have an account?
+        </span>
+
+        <NavLink class="font-semibold text-pText hover:text-qText transition ease-in-out" href="sign-in" Match="NavLinkMatch.All">
+            <span class="font-'semibold' text-pText" aria-hidden="true">Sign In</span>
+        </NavLink>
+    </div>
+</div>
+
+@code {
+
+}

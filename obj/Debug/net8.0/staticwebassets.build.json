@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "4eDwcNERe7slaTP3VZCadzPaXlz6NeLEnZWTWWmtAVs=",
+  "Source": "KonnClient",
+  "BasePath": "_content/KonnClient",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "KonnClient\\wwwroot",
+      "Source": "KonnClient",
+      "ContentRoot": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\",
+      "BasePath": "_content/KonnClient",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\app.css",
+      "SourceId": "KonnClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\",
+      "BasePath": "_content/KonnClient",
+      "RelativePath": "app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\css\\app.css",
+      "SourceId": "KonnClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\",
+      "BasePath": "_content/KonnClient",
+      "RelativePath": "css/app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\favicon.png",
+      "SourceId": "KonnClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\wwwroot\\",
+      "BasePath": "_content/KonnClient",
+      "RelativePath": "favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.png"
+    }
+  ]
+}

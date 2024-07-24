@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "w1ka1D639n4=",
+  "dgSpecHash": "Ugj7dZ4ZXzc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient\\KonnClient.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\bogus\\35.6.0\\bogus.35.6.0.nupkg.sha512"
+  ],
   "logs": []
 }

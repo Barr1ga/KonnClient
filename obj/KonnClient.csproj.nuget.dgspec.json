@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient\\KonnClient.csproj": {}
+    "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient\\KonnClient.csproj": {
+    "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient\\KonnClient.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient.csproj",
         "projectName": "KonnClient",
-        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient\\KonnClient.csproj",
+        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\KonnClient\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

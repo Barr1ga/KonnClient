@@ -1,0 +1,38 @@
+﻿@inject ILogger<SignInForm> Logger
+
+<EditForm Model="SignInData" OnSubmit="Submit" FormName="SignInModel" class="flex flex-col space-y-[12px]">
+    <div class="flex flex-col space-y-[4px]">
+        <label class="font-medium" for="email">
+            Email
+        </label>
+        <InputText id="email" @bind-Value="@SignInData.Email" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+    </div>
+
+    <div class="flex flex-col space-y-[4px]">
+        <label class="font-medium" for="password">
+            Password
+        </label>
+        <InputText id="password" @bind-Value="@SignInData.Password" placeholder="******" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+    </div>
+    <div>
+        <KonnButton Text="Sign In" Type="primary" ClassName="w-full" />
+    </div>
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    public SignInModel? SignInData { get; set; } = new SignInModel();
+
+    public class SignInModel
+    {
+        public string? Email { get; set; } = string.Empty;
+        public string? Password { get; set; } = string.Empty;
+    }
+
+    protected override void OnInitialized() => SignInData ??= new();
+
+    private void Submit() 
+    {
+        Logger.LogInformation("Id = {Id}", SignInData?.Email);
+    }
+}

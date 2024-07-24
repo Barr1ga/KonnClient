@@ -1,0 +1,45 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'selector',
+  content: ["./Components/**/*.{razor,html,cshtml}"],
+  theme: {
+      extend: {
+          fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+          },
+      },
+      colors: {
+          pBackground: "#fff",
+          sBackground: "#f0f1f2",
+          tBackground: "#E4E7EC",
+          qBackground: "#1d2739",
+          primary: "#040505",
+          pText: "#1d2739",
+          sText: "#667185",
+          tText: "#475367",
+          qText: "#fff",
+          success: "#0F973D",
+          warning: "#be9a37",
+          danger: "#F31260",
+          neutral: "#bbbbbb",
+          link: "#006FEE",
+          border: "#D0D5DD",
+          white: "#FFFFFF",
+          black: "#000000",
+          dpBackground: "#1f1f1f",
+          dsBackground: "#272727",
+          dtBackground: "#343434",
+          dprimary: "#040505",
+          dpText: "#1d2739",
+          dsText: "#667185",
+          dttext: "#475367",
+      },
+      fontWeight: {
+          normal: '400',
+          medium: '500',
+          semibold: '600',
+          bold: '700',
+      },
+  },
+  plugins: [],
+}

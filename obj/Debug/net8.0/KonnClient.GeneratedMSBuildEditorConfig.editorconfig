@@ -9,47 +9,67 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KonnClient
 build_property.RootNamespace = KonnClient
-build_property.ProjectDir = C:\Users\USER\Documents\GitHub\KonnClient\KonnClient\
+build_property.ProjectDir = C:\Users\USER\Documents\GitHub\KonnClient\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USER\Documents\GitHub\KonnClient\KonnClient
+build_property.MSBuildProjectDirectory = C:\Users\USER\Documents\GitHub\KonnClient
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/App.razor]
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Pages/Error.razor]
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Pages/Home.razor]
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatSignIn/SignIn.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0U2lnbkluXFNpZ25Jbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatSignIn/SignInForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0U2lnbkluXFNpZ25JbkZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatSignUp/SignUp.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0U2lnblVwXFNpZ25VcC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatSignUp/SignUpForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0U2lnblVwXFNpZ25VcEZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceRow.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZVJvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/Workspaces.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Routes.razor]
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Shared/KonnButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcS29ubkJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-z2c2ddutgc
-
-[C:/Users/USER/Documents/GitHub/KonnClient/KonnClient/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-zr0xs4cw6z
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 

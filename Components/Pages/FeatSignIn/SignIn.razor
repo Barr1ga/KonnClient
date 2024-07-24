@@ -3,26 +3,27 @@
 
 <PageTitle>Sign In</PageTitle>
 
-<div class="space-y-[16px]">
+<div class="space-y-[16px] border border-border px-[20px] py-[24px] drop-shadow-2xl rounded-[16px] bg-sBackground ">
     <div class="space-y-[8px]">
-        <h1 class="text-[24px] font-bold">
+        <h1 class="text-[24px] font-semibold">
             Welcome to Konn
         </h1>
-        <span class="">
+        <span class="text-sText">
             Please sign in or sign up below.
         </span>
     </div>
 
-    <SignInForm />
-
+    <div class="w-[350px]">
+       <SignInForm />
+    </div>
 
     <div class="flex space-x-[4px]">
         <span class="text-sText">
             Dont have an account?
         </span>
 
-        <NavLink class="font-semibold text-pText hover:text-qText transition ease-in-out" href="sign-in" Match="NavLinkMatch.All">
-            <span class="font-'semibold' text-pText" aria-hidden="true">Sign In</span>
+        <NavLink class="font-semibold text-pText hover:text-qText transition ease-in-out" href="sign-up" Match="NavLinkMatch.All">
+            <span class="font-'semibold' text-pText" aria-hidden="true">Sign Up</span>
         </NavLink>
     </div>
 </div>

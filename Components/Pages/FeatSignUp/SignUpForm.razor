@@ -1,23 +1,30 @@
 ﻿@inject ILogger<SignUpForm> Logger
 
-<EditForm Model="SignUpData" OnSubmit="Submit" FormName="SignUpModel">
-    <div class="space-y-[4px]">
-        <label>
-            Email
-        </label>
-        <InputText id="email" @bind-Value="SignUpData.Email" placeholder="you@email.com" />
+<EditForm Model="SignUpData" OnSubmit="Submit" FormName="SignUpModel" class="w-full flex flex-col gap-y-[24px]">
+    <div class="flex flex-col space-y-[12px]">
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="name">
+                Name
+            </label>
+            <InputText id="name" @bind-Value="@SignUpData.Name" placeholder="Your Name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="email">
+                Email
+            </label>
+            <InputText id="email" @bind-Value="@SignUpData.Email" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="password">
+                Password
+            </label>
+            <InputText id="password" @bind-Value="@SignUpData.Password" placeholder="******" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+        </div>
     </div>
 
-    <div class="space-y-[4px]">
-        <label>
-            Email
-        </label>
-        <InputText id="password" @bind-Value="SignUpData.Password" placeholder="******" />
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-
+    <KonnButton Text="Sign In" Type="primary" ClassName="w-full" />
 </EditForm>
 
 @code {
@@ -26,13 +33,14 @@
 
     public class SignUpModel
     {
+        public string? Name { get; set; } = string.Empty;
         public string? Email { get; set; } = string.Empty;
         public string? Password { get; set; } = string.Empty;
     }
 
     protected override void OnInitialized() => SignUpData ??= new();
 
-    private void Submit() 
+    private void Submit()
     {
         Logger.LogInformation("Id = {Id}", SignUpData?.Email);
     }

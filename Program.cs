@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddSingleton<MockWorkspaceService>();
+builder.Services.AddSingleton<MockDataService>();
 
 var app = builder.Build();
 

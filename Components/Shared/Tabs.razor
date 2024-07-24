@@ -1,0 +1,36 @@
+﻿@rendermode InteractiveServer
+
+<div class="flex gap-[20px]">
+    @foreach (var tab in TabOptions)
+    {
+        <button @onclick="() => OnClick(tab.Value)" class="flex flex-col gap-y-[8px] group" aria-selected="@((SelectedTab == tab.Value) ? "true" : "false")">
+            <span class="@(SelectedTab == tab.Value ? "text-pText" : "text-pText/50 group-hover:text-pText/70") transition-all ease-in-out px-[6px]">
+                @tab.Label
+            </span>
+
+            <div class="w-full h-[3px] rounded-full transition-all ease-in-out @(SelectedTab == tab.Value ? "bg-primary" : "bg-transparent")" />
+        </button>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string SelectedTab { get; set; } = string.Empty;
+
+    [Parameter]
+    public List<TabModel> TabOptions { get; set; } = new List<TabModel>();
+
+    [Parameter]
+    public EventCallback<string> OnTabSelected { get; set; }
+
+    private async Task OnClick(string selectedValue)
+    {
+        await OnTabSelected.InvokeAsync(selectedValue);
+    }
+
+    public class TabModel
+    {
+        public string Label { get; set; } = string.Empty;
+        public string Value { get; set; } = string.Empty;
+    }
+}

@@ -10,4 +10,17 @@
     <PackageReference Include="Bogus" Version="35.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Components\Pages\FeatWorkspace\ContactsList.razor" />
+    <None Include="Components\Pages\FeatWorkspace\WorkspaceDetails.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Pages\FeatWorkspace\ContactsList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Pages\FeatWorkspace\ContactsList.razor" />
+  </ItemGroup>
+
 </Project>

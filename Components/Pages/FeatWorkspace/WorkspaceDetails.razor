@@ -1,0 +1,51 @@
+﻿@page "/workspaces/{WorkspaceId}"
+@rendermode InteractiveServer
+
+<PageTitle>@Workspace?.Name</PageTitle>
+
+<div class="w-full flex flex-col items-center border-b border-border pt-[20px] space-y-[32px]">
+    <div class="space-y-[24px] max-w-[800px] w-full">
+        <div class="space-y-[8px]">
+            <h1 class="text-[36px] font-semibold">@Workspace?.Name</h1>
+            <span class="text-sText">@Workspace?.Description</span>
+        </div>
+    </div>
+
+    <div class="flex w-full max-w-[800px] space-x-[20px]">
+        <Tabs SelectedTab="@SelectedTab" TabOptions="@TabOptions" OnTabSelected="HandleTabSelected" />
+    </div>
+</div>
+
+<div class="flex w-full space-x-[20px]">
+    <div class="space-y-[24px] max-w-[800px] w-full">
+        <ContactsList />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string WorkspaceId { get; set; } = string.Empty;
+
+    public string SelectedTab { get; set; } = "overview";
+    public Workspace? Workspace { get; set; }
+
+    public List<TabModel> TabOptions { get; set; } = new List<TabModel>
+    {
+        new TabModel { Label = "Overview", Value = "overview" },
+        new TabModel { Label = "Categories", Value = "categories" },
+        new TabModel { Label = "Settings", Value = "settings" }
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (int.TryParse(WorkspaceId, out int workspaceIdInt))
+        {
+            Workspace = MockDataService.Workspaces.FirstOrDefault(w => w.Id == workspaceIdInt);
+        }
+    }
+
+    private void HandleTabSelected(string selectedTab)
+    {
+        SelectedTab = selectedTab;
+    }
+}

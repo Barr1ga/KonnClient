@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Components",
+    "\\Components\\Pages",
+    "\\Components\\Pages\\FeatSignIn",
+    "\\Components\\Pages\\FeatSignUp",
+    "\\Components\\Pages\\FeatWorkspace",
+    "\\Components\\Shared"
   ],
-  "SelectedNode": "\\KonnClient.sln",
+  "SelectedNode": "\\Components\\Pages\\FeatWorkspace\\WorkspaceDetails.razor",
   "PreviewInSolutionExplorer": false
 }

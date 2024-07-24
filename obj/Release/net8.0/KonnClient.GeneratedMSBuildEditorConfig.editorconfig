@@ -66,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Shared/InputErrorMessage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcSW5wdXRFcnJvck1lc3NhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Shared/KonnButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcS29ubkJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

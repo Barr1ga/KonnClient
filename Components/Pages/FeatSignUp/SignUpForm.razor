@@ -1,30 +1,38 @@
 ﻿@inject ILogger<SignUpForm> Logger
 
-<EditForm Model="SignUpData" OnSubmit="Submit" FormName="SignUpModel" class="w-full flex flex-col gap-y-[24px]">
+<EditForm Model="SignUpData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" FormName="SignUpModel" class="w-full flex flex-col gap-y-[24px]">
+    <DataAnnotationsValidator />
+    
     <div class="flex flex-col space-y-[12px]">
         <div class="flex flex-col space-y-[4px]">
             <label class="font-medium" for="name">
                 Name
             </label>
-            <InputText id="name" @bind-Value="@SignUpData.Name" placeholder="Your Name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <InputText id="name" @bind-Value="@SignUpData.Name" placeholder="Your Name"
+                class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignUpData.Name)" />
         </div>
 
         <div class="flex flex-col space-y-[4px]">
             <label class="font-medium" for="email">
                 Email
             </label>
-            <InputText id="email" @bind-Value="@SignUpData.Email" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <InputText id="email" @bind-Value="@SignUpData.Email" placeholder="you@email.com"
+                       class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignUpData.Email)"/>
         </div>
 
         <div class="flex flex-col space-y-[4px]">
             <label class="font-medium" for="password">
                 Password
-            </label>
-            <InputText id="password" @bind-Value="@SignUpData.Password" placeholder="******" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            </label> 
+            <InputText id="password" @bind-Value="@SignUpData.Password" placeholder="******"
+                       class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignUpData.Password)" />
         </div>
     </div>
 
-    <KonnButton Text="Sign In" Type="primary" ClassName="w-full" />
+    <KonnButton Text="Sign In" Type="submit" ClassName="w-full" />
 </EditForm>
 
 @code {
@@ -33,15 +41,26 @@
 
     public class SignUpModel
     {
-        public string? Name { get; set; } = string.Empty;
-        public string? Email { get; set; } = string.Empty;
-        public string? Password { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
+        public string Password { get; set; } = string.Empty;
     }
 
     protected override void OnInitialized() => SignUpData ??= new();
 
-    private void Submit()
+    private void OnValidSubmit()
     {
         Logger.LogInformation("Id = {Id}", SignUpData?.Email);
+    }
+
+    private void OnInvalidSubmit()
+    {
     }
 }

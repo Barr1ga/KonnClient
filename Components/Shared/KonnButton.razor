@@ -1,4 +1,4 @@
-﻿<button class="@GetButtonCssClass()" @onclick="HandleClick" disabled="@IsDisabled">
+﻿<button class="@GetButtonCssClass()" @onclick="HandleClick" disabled="@IsDisabled" type="@Type">
     @if (Loading)
     {
         <span class="spinner-border" style="border-color: @SpinnerColor"></span>
@@ -23,6 +23,7 @@
 @code {
     [Parameter] public bool Circular { get; set; } = false;
     [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public string Variant{ get; set; } = "primary";
     [Parameter] public string Type { get; set; } = "primary";
     [Parameter] public bool Bordered { get; set; } = false;
     [Parameter] public string Text { get; set; }
@@ -41,7 +42,7 @@
 
     private string GetButtonCssClass()
     {
-        var btnColor = Type switch
+        var btnColor = Variant switch
         {
             "primary" => Success ? "bg-success" : Danger ? "bg-danger" : "bg-primary",
             "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-tBackground border-border",
@@ -82,7 +83,7 @@
             _ => "text-sm"
         };
 
-        var btnTextColor = Type switch
+        var btnTextColor = Variant switch
         {
             "primary" => "text-white",
             "secondary" => Success ? "text-success" : Danger ? "text-danger" : "text-primary",

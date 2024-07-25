@@ -626,6 +626,10 @@ video {
   gap: 20px;
 }
 
+.gap-y-\[16px\] {
+  row-gap: 16px;
+}
+
 .gap-y-\[24px\] {
   row-gap: 24px;
 }
@@ -805,6 +809,11 @@ video {
   padding-right: 20px;
 }
 
+.px-\[6px\] {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 .px-\[8px\] {
   padding-left: 8px;
   padding-right: 8px;
@@ -823,11 +832,6 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-\[20px\] {
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .py-\[24px\] {
@@ -985,4 +989,8 @@ video {
 .focus\:border-pText:focus {
   --tw-border-opacity: 1;
   border-color: rgb(14 15 15 / var(--tw-border-opacity));
+}
+
+.group:hover .group-hover\:text-pText\/70 {
+  color: rgb(14 15 15 / 0.7);
 }

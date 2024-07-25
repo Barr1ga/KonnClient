@@ -61,7 +61,7 @@ public class MockDataService
         }
     };
 
-    public static readonly List<Contact> contacts = new List<Contact>
+    public static readonly List<Contact> Contacts = new List<Contact>
             {
                 new Contact
                 {

@@ -6,8 +6,9 @@
     "\\Components\\Pages\\FeatSignIn",
     "\\Components\\Pages\\FeatSignUp",
     "\\Components\\Pages\\FeatWorkspace",
-    "\\Components\\Shared"
+    "\\Components\\Shared",
+    "\\Models"
   ],
-  "SelectedNode": "\\Components\\Pages\\FeatWorkspace\\WorkspaceDetails.razor",
+  "SelectedNode": "\\KonnClient.sln",
   "PreviewInSolutionExplorer": false
 }

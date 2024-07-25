@@ -14,6 +14,6 @@
 
     protected override void OnInitialized()
     {
-        Contacts = MockDataService.Contacts;
+        Contacts = MockDataService.Contacts ?? new List<Contact>();
     }
 }

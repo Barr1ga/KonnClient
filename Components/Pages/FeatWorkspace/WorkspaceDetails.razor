@@ -1,5 +1,4 @@
 ﻿@page "/workspaces/{WorkspaceId}"
-@rendermode InteractiveServer
 
 <PageTitle>@Workspace?.Name</PageTitle>
 
@@ -38,6 +37,11 @@
 
     protected override async Task OnInitializedAsync()
     {
+        if (string.IsNullOrEmpty(WorkspaceId))
+        {
+            throw new Exception("WorkspaceId is null or empty");
+        }
+
         if (int.TryParse(WorkspaceId, out int workspaceIdInt))
         {
             Workspace = MockDataService.Workspaces.FirstOrDefault(w => w.Id == workspaceIdInt);

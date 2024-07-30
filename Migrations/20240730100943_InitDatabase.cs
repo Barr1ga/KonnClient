@@ -1,12 +1,13 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace KonnClient.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -97,7 +98,7 @@ namespace KonnClient.Migrations
                     IsBlocked = table.Column<bool>(type: "bit", nullable: false),
                     IsEmergency = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    LastOpenedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastOpenedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -157,6 +158,62 @@ namespace KonnClient.Migrations
                         column: x => x.ContactId,
                         principalTable: "Contacts",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "CreatedAt", "Email", "Image", "IsDeleted", "Name", "UpdatedAt" },
+                values: new object[] { 1, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5652), "john.doe@example.com", "", false, "John Doe", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5653) });
+
+            migrationBuilder.InsertData(
+                table: "Workspaces",
+                columns: new[] { "Id", "CreatedAt", "Description", "Image", "IsDeleted", "Name", "UpdatedAt", "UserId" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "This is the first workspace.", "https://example.com/image1.jpg", false, "Workspace Alpha", new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 2, new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "This is the second workspace.", "https://example.com/image2.jpg", false, "Workspace Beta", new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 3, new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "This is the third workspace.", "https://example.com/image3.jpg", true, "Workspace Gamma", new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 4, new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "This is the fourth workspace.", "https://example.com/image4.jpg", false, "Workspace Delta", new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 5, new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "This is the fifth workspace.", "https://example.com/image5.jpg", false, "Workspace Epsilon", null, 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Color", "CreatedAt", "Description", "IsDeleted", "Name", "UpdatedAt", "WorkspaceId" },
+                values: new object[,]
+                {
+                    { 1, "#60abe3", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5895), "My own personal important contacts", false, "Important", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5895), 1 },
+                    { 2, "#60abe3", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5899), "My own personal important contacts", false, "Emergency", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5899), 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Contacts",
+                columns: new[] { "Id", "CreatedAt", "Email", "Image", "IsBlocked", "IsDeleted", "IsEmergency", "IsFavorite", "LastOpenedAt", "Name", "Notes", "Phone", "Pronounciation", "Telephone", "UpdatedAt", "WorkspaceId" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5935), "john.doe@example.com", "", false, false, false, true, null, "John Doe", "Important contact", "123-456-7890", "John Doe", "123-456-7890", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5936), 1 },
+                    { 2, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5941), "ben.affleck@example.com", "", false, false, false, true, null, "Ben Affleck", "Important contact", "123-456-7890", "Ben Affleck", "123-456-7890", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5941), 1 },
+                    { 3, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5945), "hosea@example.com", "", false, false, false, true, null, "Hosea Mendez Barriga", "Important contact", "123-456-7890", "Hosea Mendez Barriga", "123-456-7890", new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5945), 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Addresses",
+                columns: new[] { "Id", "ContactId", "CreatedAt", "FullName", "IsDefault", "UpdatedAt" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5969), "University of San Carlos Talamban, Cebu", true, null },
+                    { 2, 1, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5971), "Liloan, Cebu", true, null },
+                    { 3, 1, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5973), "Villa Marina, Lapu-Lapu City", true, null },
+                    { 4, 2, new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5975), "Guinacot, Danao, Cebu", true, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ContactCategories",
+                columns: new[] { "Id", "CategoryId", "ContactId" },
+                values: new object[,]
+                {
+                    { 1, 1, 1 },
+                    { 2, 2, 2 }
                 });
 
             migrationBuilder.CreateIndex(

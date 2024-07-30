@@ -34,8 +34,7 @@ public class Contact
 
     public bool IsDeleted { get; set; } = false;
 
-    [Required]
-    public DateTime LastOpenedAt { get; set; } = DateTime.Now;
+    public DateTime? LastOpenedAt { get; set; }
 
     [Required]
     public DateTime CreatedAt { get; set; } = DateTime.Now;

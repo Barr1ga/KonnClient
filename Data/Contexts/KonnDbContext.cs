@@ -1,4 +1,5 @@
-﻿using KonnClient.Data.Models;
+﻿using KonnClient.Data.Contexts.Seed;
+using KonnClient.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace KonnClient.Data.Contexts;
@@ -23,6 +24,25 @@ public class KonnDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        var SEED_DATABASE = true;
+
+        modelBuilder.Entity<User>()
+          .HasMany(w => w.Workspaces)
+          .WithOne(a => a.User)
+          .HasForeignKey(a => a.UserId)
+          .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Workspace>()
+          .HasMany(w => w.Contacts)
+          .WithOne(a => a.Workspace)
+          .HasForeignKey(a => a.WorkspaceId)
+          .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Workspace>()
+          .HasMany(w => w.Categories)
+          .WithOne(a => a.Workspace)
+          .HasForeignKey(a => a.WorkspaceId)
+          .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Contact>()
           .HasMany(c => c.Addresses)
@@ -42,22 +62,10 @@ public class KonnDbContext : DbContext
           .HasForeignKey(cc => cc.CategoryId)
           .OnDelete(DeleteBehavior.NoAction);
 
-        modelBuilder.Entity<User>()
-          .HasMany(w => w.Workspaces)
-          .WithOne(a => a.User)
-          .HasForeignKey(a => a.UserId)
-          .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<Workspace>()
-          .HasMany(w => w.Categories)
-          .WithOne(a => a.Workspace)
-          .HasForeignKey(a => a.WorkspaceId)
-          .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<Workspace>()
-          .HasMany(w => w.Contacts)
-          .WithOne(a => a.Workspace)
-          .HasForeignKey(a => a.WorkspaceId)
-          .OnDelete(DeleteBehavior.Cascade);
+        // Seed Database
+        if (SEED_DATABASE)
+        {
+            modelBuilder.Seed();
+        }
     }
 }

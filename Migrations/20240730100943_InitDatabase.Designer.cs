@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KonnClient.Migrations
 {
     [DbContext(typeof(KonnDbContext))]
-    [Migration("20240730085838_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240730100943_InitDatabase")]
+    partial class InitDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,6 +54,40 @@ namespace KonnClient.Migrations
                     b.HasIndex("ContactId");
 
                     b.ToTable("Addresses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ContactId = 1,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5969),
+                            FullName = "University of San Carlos Talamban, Cebu",
+                            IsDefault = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ContactId = 1,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5971),
+                            FullName = "Liloan, Cebu",
+                            IsDefault = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ContactId = 1,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5973),
+                            FullName = "Villa Marina, Lapu-Lapu City",
+                            IsDefault = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ContactId = 2,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5975),
+                            FullName = "Guinacot, Danao, Cebu",
+                            IsDefault = true
+                        });
                 });
 
             modelBuilder.Entity("KonnClient.Data.Models.Category", b =>
@@ -93,6 +127,30 @@ namespace KonnClient.Migrations
                     b.HasIndex("WorkspaceId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Color = "#60abe3",
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5895),
+                            Description = "My own personal important contacts",
+                            IsDeleted = false,
+                            Name = "Important",
+                            UpdatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5895),
+                            WorkspaceId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Color = "#60abe3",
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5899),
+                            Description = "My own personal important contacts",
+                            IsDeleted = false,
+                            Name = "Emergency",
+                            UpdatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5899),
+                            WorkspaceId = 1
+                        });
                 });
 
             modelBuilder.Entity("KonnClient.Data.Models.Contact", b =>
@@ -125,7 +183,7 @@ namespace KonnClient.Migrations
                     b.Property<bool>("IsFavorite")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("LastOpenedAt")
+                    b.Property<DateTime?>("LastOpenedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -159,6 +217,62 @@ namespace KonnClient.Migrations
                     b.HasIndex("WorkspaceId");
 
                     b.ToTable("Contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5935),
+                            Email = "john.doe@example.com",
+                            Image = "",
+                            IsBlocked = false,
+                            IsDeleted = false,
+                            IsEmergency = false,
+                            IsFavorite = true,
+                            Name = "John Doe",
+                            Notes = "Important contact",
+                            Phone = "123-456-7890",
+                            Pronounciation = "John Doe",
+                            Telephone = "123-456-7890",
+                            UpdatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5936),
+                            WorkspaceId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5941),
+                            Email = "ben.affleck@example.com",
+                            Image = "",
+                            IsBlocked = false,
+                            IsDeleted = false,
+                            IsEmergency = false,
+                            IsFavorite = true,
+                            Name = "Ben Affleck",
+                            Notes = "Important contact",
+                            Phone = "123-456-7890",
+                            Pronounciation = "Ben Affleck",
+                            Telephone = "123-456-7890",
+                            UpdatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5941),
+                            WorkspaceId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5945),
+                            Email = "hosea@example.com",
+                            Image = "",
+                            IsBlocked = false,
+                            IsDeleted = false,
+                            IsEmergency = false,
+                            IsFavorite = true,
+                            Name = "Hosea Mendez Barriga",
+                            Notes = "Important contact",
+                            Phone = "123-456-7890",
+                            Pronounciation = "Hosea Mendez Barriga",
+                            Telephone = "123-456-7890",
+                            UpdatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5945),
+                            WorkspaceId = 1
+                        });
                 });
 
             modelBuilder.Entity("KonnClient.Data.Models.ContactCategory", b =>
@@ -182,6 +296,20 @@ namespace KonnClient.Migrations
                     b.HasIndex("ContactId");
 
                     b.ToTable("ContactCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            ContactId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 2,
+                            ContactId = 2
+                        });
                 });
 
             modelBuilder.Entity("KonnClient.Data.Models.User", b =>
@@ -215,6 +343,18 @@ namespace KonnClient.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5652),
+                            Email = "john.doe@example.com",
+                            Image = "",
+                            IsDeleted = false,
+                            Name = "John Doe",
+                            UpdatedAt = new DateTime(2024, 7, 30, 18, 9, 43, 188, DateTimeKind.Local).AddTicks(5653)
+                        });
                 });
 
             modelBuilder.Entity("KonnClient.Data.Models.Workspace", b =>
@@ -253,6 +393,62 @@ namespace KonnClient.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Workspaces");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "This is the first workspace.",
+                            Image = "https://example.com/image1.jpg",
+                            IsDeleted = false,
+                            Name = "Workspace Alpha",
+                            UpdatedAt = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "This is the second workspace.",
+                            Image = "https://example.com/image2.jpg",
+                            IsDeleted = false,
+                            Name = "Workspace Beta",
+                            UpdatedAt = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "This is the third workspace.",
+                            Image = "https://example.com/image3.jpg",
+                            IsDeleted = true,
+                            Name = "Workspace Gamma",
+                            UpdatedAt = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "This is the fourth workspace.",
+                            Image = "https://example.com/image4.jpg",
+                            IsDeleted = false,
+                            Name = "Workspace Delta",
+                            UpdatedAt = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "This is the fifth workspace.",
+                            Image = "https://example.com/image5.jpg",
+                            IsDeleted = false,
+                            Name = "Workspace Epsilon",
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("KonnClient.Data.Models.Address", b =>

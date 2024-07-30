@@ -4,7 +4,7 @@
     @foreach (var tab in TabOptions)
     {
         <button @onclick="() => OnClick(tab.Value)" class="flex flex-col gap-y-[8px] group" aria-selected="@((SelectedTab == tab.Value) ? "true" : "false")">
-            <span class="@(SelectedTab == tab.Value ? "text-pText" : "text-pText/50 group-hover:text-pText/70") transition-all ease-in-out px-[6px]">
+            <span class="@(SelectedTab == tab.Value ? "text-pText" : "text-pText/50 group-hover:text-pText/70") transition-all ease-in-out px-[6px] font-medium">
                 @tab.Label
             </span>
 

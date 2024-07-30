@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Components\Pages\FeatWorkspace\ContactsList.razor" />
+    <None Include="Components\Pages\FeatContact\ContactsRecentList.razor" />
+    <None Include="Components\Pages\FeatContact\ContactsList.razor" />
     <None Include="Components\Pages\FeatWorkspace\WorkspaceDetails.razor" />
   </ItemGroup>
 

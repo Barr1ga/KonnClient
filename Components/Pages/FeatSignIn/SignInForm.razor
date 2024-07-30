@@ -10,7 +10,7 @@
             <label class="font-medium" for="email">
                 Email
             </label>
-            <InputText id="email" @bind-Value="@SignInData.Email" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <InputText id="email" @bind-Value="@SignInData.Email" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
             <ValidationMessage class="text-danger" For="@(() => SignInData.Email)" />
         </div>
 
@@ -18,7 +18,7 @@
             <label class="font-medium" for="password">
                 Password
             </label>
-            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="******" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="******" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
             <ValidationMessage class="text-danger" For="@(() => SignInData.Password)" />
         </div>
     </div>

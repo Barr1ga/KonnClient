@@ -1,13 +1,13 @@
-﻿<NavLink href="@($"/workspaces/{Workspace.Id}")" Match="NavLinkMatch.All">
-    <div class="flex items-center between space-x-4 p-[12px] rounded-[12px] hover:bg-sBackground transition-all ease-in-out cursor-pointer bg-sBackground border border-white">
+﻿<NavLink href="@($"/workspace/{Workspace.Id}/overview")" Match="NavLinkMatch.All">
+    <div class="flex items-center between space-x-4 p-[12px] rounded-[12px] hover:bg-sBackground transition-all ease-in-out cursor-pointer bg-sBackground border border-border">
         <div class="h-[48px] w-[48px] rounded-[4px] bg-tBackground"></div>
 
         <div class="flex flex-col">
-            <span class="font-semibold text-[18px]">
+            <span class="font-semibold text-pText">
                 @Workspace.Name
             </span>
 
-            <span class="text-sText">
+            <span class="text-sText/50">
                 @Workspace.Description
             </span>
         </div>

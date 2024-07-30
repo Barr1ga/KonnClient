@@ -9,7 +9,7 @@
                 Name
             </label>
             <InputText id="name" @bind-Value="@SignUpData.Name" placeholder="Your Name"
-                class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+                class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
             <ValidationMessage class="text-danger" For="@(() => SignUpData.Name)" />
         </div>
 
@@ -18,7 +18,7 @@
                 Email
             </label>
             <InputText id="email" @bind-Value="@SignUpData.Email" placeholder="you@email.com"
-                       class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+                       class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
             <ValidationMessage class="text-danger" For="@(() => SignUpData.Email)"/>
         </div>
 
@@ -27,7 +27,7 @@
                 Password
             </label> 
             <InputText id="password" @bind-Value="@SignUpData.Password" placeholder="******"
-                       class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[8px] transition-all easei-in-out" />
+                       class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
             <ValidationMessage class="text-danger" For="@(() => SignUpData.Password)" />
         </div>
     </div>

@@ -1,4 +1,4 @@
-﻿@page "/workspace/{WorkspaceId}/overview"
+﻿@page "/workspace/{WorkspaceId}/contact/{ContactId}"
 @using KonnClient.Components.Pages.FeatContact
 @using KonnClient.Services.Data
 @using static KonnClient.Components.Shared.KonnTabs
@@ -22,12 +22,12 @@
 
     <div class="flex w-full gap-y-[32px] flex flex-col items-center">
         <div class="space-y-[24px] max-w-[800px] w-full">
-            <ContactsRecentList WorkspaceId="@WorkspaceId" />
+            <ContactInformation Contact="@Contact"  />
 
             <div class="h-[1px] bg-border w-full max-w-[800px]" />
 
-            <div class="flex w-full space-x-[20px] flex flex-col items-center">
-                <ContactsList WorkspaceId="@WorkspaceId" />
+            <div class="space-y-[24px] max-w-[800px] w-full">
+                <ContactsRecentList WorkspaceId="@WorkspaceId" />
             </div>
         </div>
     </div>
@@ -36,10 +36,14 @@
 @code {
     [Parameter]
     public string WorkspaceId { get; set; } = string.Empty;
+    [Parameter]
+    public string ContactId { get; set; } = string.Empty;
 
     public string SelectedTab { get; set; } = "overview";
 
     public Workspace? Workspace { get; set; }
+
+    public Contact? Contact { get; set; }
 
     public List<TabModel> TabOptions { get; set; } = new List<TabModel>
     {
@@ -59,6 +63,11 @@
         if (int.TryParse(WorkspaceId, out int workspaceIdInt))
         {
             Workspace = MockDataService.Workspaces.FirstOrDefault(w => w.Id == workspaceIdInt);
+        }
+
+        if (int.TryParse(ContactId, out int contactIdInt))
+        {
+            Contact = MockDataService.Contacts.FirstOrDefault(c => c.Id == contactIdInt);
         }
     }
 

@@ -1,10 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
+<HeadContent>
+    <style>
+        html, body {
+            overflow-y: scroll
+        }
+    </style>
+</HeadContent>
+
 <div class="light h-full">
-    <div>
+    <div class="relative">
         <NavMenu />
 
-        <main class="flex justify-center pt-[20px] h-full">
+        <main class="flex justify-center h-full">
             @Body
         </main>
     </div>

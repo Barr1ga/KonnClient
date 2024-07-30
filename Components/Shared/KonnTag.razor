@@ -1,0 +1,22 @@
+﻿<span style="background-color: @GetRgbaColor(Color, 0.1); color: @Color;" class="px-[8px] py-[1px] rounded-full font-semibold text-[12px]">
+    @Text
+</span>
+
+@code {
+    [Parameter] public string Text { get; set; } = string.Empty;
+    [Parameter] public string Color { get; set; } = "#ff00db";
+
+    private string GetRgbaColor(string hexColor, double opacity)
+    {
+        // Remove the hash at the start if it's there
+        hexColor = hexColor.Replace("#", string.Empty);
+
+        // Parse the hex color
+        byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+        byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+        byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+
+        // Return the RGBA string
+        return $"rgba({r}, {g}, {b}, {opacity})";
+    }
+}

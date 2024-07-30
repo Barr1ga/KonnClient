@@ -1,11 +1,12 @@
 using KonnClient.Components;
-using KonnClient.Models;
+using KonnClient.Services.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
 builder.Services.AddSingleton<MockDataService>();
 
 builder.Services.AddScoped(sp =>

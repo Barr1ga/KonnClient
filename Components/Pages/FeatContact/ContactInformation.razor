@@ -1,0 +1,53 @@
+﻿<div class="flex gap-x-[8px]">
+    <div class="flex items-start justify-between bg-pBackground p-[20px] rounded-[12px] border border-white">
+        <div class="h-[66px] w-[66px] rounded-[12px] border border-white bg-primary flex items-center justify-center">
+            <div class="h-[40px] w-[40px] rounded-full border border-border bg-pBackground drop-shadow-xl" />
+        </div>
+
+        <div class="flex flex-col gap-x-[10px]">
+            <span class="font-medium text-pText truncate">
+                @Contact.Name
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact.Email
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact."Phone"
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact.Telephone
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact.Notes
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact.IsFavorite
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact.IsEmergency
+            </span>
+
+            <span class="text-sText/50 truncate">
+                @Contact.IsDeleted
+            </span>
+
+            <span class="text-sText/50 truncate">
+                Addded at @Contact.CreatedAt
+            </span>
+
+            <span class="text-sText/50 truncate">
+                Last updated at @Contact.UpdatedAt
+            </span>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public Contact Contact { get; set; }
+}

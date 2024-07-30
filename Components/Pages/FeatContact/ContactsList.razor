@@ -44,8 +44,6 @@
 
     public string SearchValue { get; set; } = string.Empty;
 
-    public List<Contact> Contacts { get; set; } = default!;
-
     private async ValueTask<ItemsProviderResult<Contact>> LoadContacts(ItemsProviderRequest request)
     {
         // Simulate fetching data from a service with a slight delay

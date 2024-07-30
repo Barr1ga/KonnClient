@@ -1,0 +1,61 @@
+﻿@page "/workspaces"
+@using KonnClient.Data
+@using KonnClient.Data.Contexts
+@using KonnClient.Data.Models
+@using Microsoft.EntityFrameworkCore
+@inject ILogger<WorkspacesList> Logger
+@inject KonnDbContext Context
+
+<PageTitle>Explore Workspaces</PageTitle>
+
+<div class="space-y-[24px] max-w-[800px]">
+    <div class="space-y-[8px]">
+        <h1 class="text-[36px] font-bold">Workspaces</h1>
+        <span class="text-sText/60 font-medium">Every week, we feature some of our favourite workspaces of different users. You can also check out some great calendars from the community.</span>
+    </div>
+
+    <div class="flex flex-col space-y-[8px]">
+        <Virtualize Context="workspace" ItemsProvider="GetWorkspaces">
+            <ItemContent>
+                <WorkspaceRow Workspace="@workspace" />
+            </ItemContent>
+
+            <Placeholder>
+                <p>loading...</p>
+            </Placeholder>
+
+            <EmptyContent>
+                <p>
+                    There are no contacts to display.
+                </p>
+            </EmptyContent>
+        </Virtualize>
+    </div>
+</div>
+
+@code {
+    private int userId = 1;
+
+    private async ValueTask<ItemsProviderResult<Workspace>> GetWorkspaces(ItemsProviderRequest request)
+    {
+        try
+        {
+            var totalCount = await Context.Workspaces
+                .Where(w => w.Id == userId)
+                .CountAsync();
+
+            var workspaces = await Context.Workspaces
+                .Where(w => w.Id == userId)
+                .Skip(request.StartIndex)
+                .Take(request.Count)
+                .ToListAsync();
+
+            return new ItemsProviderResult<Workspace>(workspaces, totalCount);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex.Message);
+            return new ItemsProviderResult<Workspace>(Array.Empty<Workspace>(), 0);
+        }
+    }
+}

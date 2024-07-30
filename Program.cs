@@ -19,6 +19,17 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
+// Auto migrations (Development Environment Only)
+await EnsureDatabaseIsMigrated(app.Services);
+
+static async Task EnsureDatabaseIsMigrated(IServiceProvider services)
+{
+    using var scope = services.CreateScope();
+    using var context = scope.ServiceProvider.GetService<KonnDbContext>();
+    if (context != null)
+        await context.Database.MigrateAsync();
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

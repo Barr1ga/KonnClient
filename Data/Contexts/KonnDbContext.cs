@@ -34,13 +34,13 @@ public class KonnDbContext : DbContext
           .HasMany(c => c.ContactCategories)
           .WithOne(cc => cc.Contact)
           .HasForeignKey(cc => cc.ContactId)
-          .OnDelete(DeleteBehavior.Cascade);
+          .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<Category>()
           .HasMany(c => c.ContactCategories)
           .WithOne(cc => cc.Category)
           .HasForeignKey(cc => cc.CategoryId)
-          .OnDelete(DeleteBehavior.Cascade);
+          .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<User>()
           .HasMany(w => w.Workspaces)

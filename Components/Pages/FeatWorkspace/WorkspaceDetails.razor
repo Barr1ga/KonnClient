@@ -1,7 +1,8 @@
 ﻿@page "/workspace/{WorkspaceId}/overview"
-@    using KonnClient.Components.Pages.FeatContact
-@    using KonnClient.Services.Data
-@    using static KonnClient.Components.Shared.KonnTabs
+@using KonnClient.Components.Pages.FeatContact
+@using KonnClient.Data
+@using KonnClient.Data.Models
+@using static KonnClient.Components.Shared.KonnTabs
 @rendermode InteractiveServer
 
 <PageTitle>@Workspace?.Name</PageTitle>

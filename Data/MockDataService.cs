@@ -1,7 +1,7 @@
-﻿using KonnClient.Dto;
-using KonnClient.Models;
+﻿using KonnClient.Data.Dto;
+using KonnClient.Data.Models;
 
-namespace KonnClient.Services.Data;
+namespace KonnClient.Data;
 
 public class MockDataService
 {

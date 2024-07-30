@@ -1,5 +1,5 @@
 using KonnClient.Components;
-using KonnClient.Services.Data;
+using KonnClient.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,12 +8,6 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddSingleton<MockDataService>();
-
-builder.Services.AddScoped(sp =>
-    new HttpClient
-    {
-        BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:5002")
-    });
 
 builder.Services.AddHttpClient();
 

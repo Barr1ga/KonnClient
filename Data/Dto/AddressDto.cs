@@ -1,4 +1,4 @@
-﻿namespace KonnAPI.Dto;
+﻿namespace KonnClient.Data.Dto;
 
 public class AddressDto
 {

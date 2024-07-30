@@ -1,7 +1,6 @@
-﻿using KonnAPI.Dto;
-using KonnClient.Models;
+﻿using KonnClient.Data.Models;
 
-namespace KonnClient.Dto;
+namespace KonnClient.Data.Dto;
 
 
 public class ContactDto

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace KonnClient.Models;
+namespace KonnClient.Data.Models;
 
 public class Contact
 {
@@ -12,7 +12,7 @@ public class Contact
     public int WorkspaceId { get; set; }
 
     [Required]
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
     public string Pronounciation { get; set; } = string.Empty;
 
@@ -33,6 +33,9 @@ public class Contact
     public bool IsEmergency { get; set; } = false;
 
     public bool IsDeleted { get; set; } = false;
+
+    [Required]
+    public DateTime LastOpenedAt { get; set; } = DateTime.Now;
 
     [Required]
     public DateTime CreatedAt { get; set; } = DateTime.Now;

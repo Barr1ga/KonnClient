@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace KonnAPI.Dto;
+namespace KonnClient.Data.Dto;
 
 public class UserDto
 {

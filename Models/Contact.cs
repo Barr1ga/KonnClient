@@ -1,11 +1,17 @@
-﻿namespace KonnClient.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace KonnClient.Models;
 
 public class Contact
 {
+    [Key]
+    [Required]
     public int Id { get; set; }
 
+    [Required]
     public int WorkspaceId { get; set; }
 
+    [Required]
     public string Name { get; set; }
 
     public string Pronounciation { get; set; } = string.Empty;
@@ -28,6 +34,7 @@ public class Contact
 
     public bool IsDeleted { get; set; } = false;
 
+    [Required]
     public DateTime CreatedAt { get; set; } = DateTime.Now;
 
     public DateTime? UpdatedAt { get; set; }

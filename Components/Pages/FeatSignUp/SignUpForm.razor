@@ -1,4 +1,5 @@
-﻿@inject ILogger<SignUpForm> Logger
+﻿@using KonnAPI.Dto
+@inject ILogger<SignUpForm> Logger
 
 <EditForm Model="SignUpData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" FormName="SignUpModel" class="w-full flex flex-col gap-y-[24px]">
     <DataAnnotationsValidator />
@@ -37,7 +38,7 @@
 
 @code {
     [SupplyParameterFromForm]
-    public Models.SignUp? SignUpData { get; set; } = new Models.SignUp();
+    public SignUpDto? SignUpData { get; set; } = new SignUpDto();
 
     protected override void OnInitialized() => SignUpData ??= new();
 

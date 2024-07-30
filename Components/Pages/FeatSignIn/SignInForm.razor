@@ -1,4 +1,5 @@
-﻿@inject ILogger<SignInForm> Logger
+﻿@using KonnAPI.Dto
+@inject ILogger<SignInForm> Logger
 @inject NavigationManager Navigation
 @inject IConfiguration Configuration
 
@@ -28,7 +29,7 @@
 
 @code {
     [SupplyParameterFromForm]
-    public Models.SignIn? SignInData { get; set; } = new Models.SignIn();
+    public SignInDto? SignInData { get; set; } = new SignInDto();
 
     protected override void OnInitialized() => SignInData ??= new();
 

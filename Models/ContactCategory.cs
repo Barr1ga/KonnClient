@@ -1,11 +1,17 @@
-﻿namespace KonnClient.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace KonnClient.Models;
 
 public class ContactCategory
 {
+    [Key]
+    [Required]
     public int Id { get; set; }
 
+    [Required]
     public int ContactId { get; set; }
 
+    [Required]
     public int CategoryId { get; set; }
 
     public virtual Contact Contact { get; set; }

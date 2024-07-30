@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddDbContext<KonnDbContext>(options =>
+builder.Services.AddDbContextFactory<KonnDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -20,6 +20,7 @@ builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Auto migrations (Development Environment Only)
+/*
 await EnsureDatabaseIsMigrated(app.Services);
 
 static async Task EnsureDatabaseIsMigrated(IServiceProvider services)
@@ -31,6 +32,7 @@ static async Task EnsureDatabaseIsMigrated(IServiceProvider services)
         await context.Database.MigrateAsync();
     }
 }
+*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

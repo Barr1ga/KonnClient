@@ -1,53 +1,59 @@
 ﻿@page "/workspaces"
-@using KonnClient.Data
-@using KonnClient.Data.Contexts
-@using KonnClient.Data.Models
-@using Microsoft.EntityFrameworkCore
+@rendermode InteractiveServer
 @inject ILogger<WorkspacesList> Logger
-@inject KonnDbContext Context
+@inject IDbContextFactory<KonnDbContext> ContextFactory
 
 <PageTitle>Explore Workspaces</PageTitle>
 
-<div class="space-y-[24px] max-w-[800px]">
-    <div class="space-y-[8px]">
-        <h1 class="text-[36px] font-bold">Workspaces</h1>
-        <span class="text-sText/60 font-medium">Every week, we feature some of our favourite workspaces of different users. You can also check out some great calendars from the community.</span>
-    </div>
+<div class="pt-[80px]">
+    <div class="space-y-[24px] max-w-[800px]">
+        <div class="space-y-[8px]">
+            <h1 class="text-[36px] font-bold">Workspaces</h1>
+            <span class="text-sText/60 font-medium">Every week, we feature some of our favourite workspaces of different users. You can also check out some great calendars from the community.</span>
+        </div>
 
-    <div class="flex flex-col space-y-[8px]">
-        <Virtualize Context="workspace" ItemsProvider="GetWorkspaces">
-            <ItemContent>
-                <WorkspaceRow Workspace="@workspace" />
-            </ItemContent>
+        <div class="flex flex-col space-y-[8px] h-full">
+            <Virtualize Context="workspace" ItemsProvider="@GetWorkspaces">
+                <ItemContent>
+                    <WorkspaceRow Workspace="@workspace" />
+                </ItemContent>
 
-            <Placeholder>
-                <p>loading...</p>
-            </Placeholder>
+                <Placeholder>
+                    <p>loading...</p>
+                </Placeholder>
 
-            <EmptyContent>
-                <p>
-                    There are no contacts to display.
-                </p>
-            </EmptyContent>
-        </Virtualize>
+                <EmptyContent>
+                    <p>
+                        There are no contacts to display.
+                    </p>
+                </EmptyContent>
+            </Virtualize>
+        </div>
     </div>
 </div>
 
 @code {
     private int userId = 1;
+    private List<Workspace> Workspaces { get; set; } = new List<Workspace>();
+    private int Count { get; set; }
 
     private async ValueTask<ItemsProviderResult<Workspace>> GetWorkspaces(ItemsProviderRequest request)
     {
         try
         {
-            var totalCount = await Context.Workspaces
-                .Where(w => w.Id == userId)
+            using var _context = ContextFactory.CreateDbContext();
+
+            var totalCount = await _context.Workspaces
+                .Where(w => w.UserId == userId)
                 .CountAsync();
 
-            var workspaces = await Context.Workspaces
-                .Where(w => w.Id == userId)
+            int numWorkspaces = Math.Min(request.Count, totalCount - request.StartIndex);
+
+            var workspaces = await _context.Workspaces
+                .Where(w => w.UserId == userId)
+                .OrderBy(w => w.CreatedAt)
                 .Skip(request.StartIndex)
-                .Take(request.Count)
+                .Take(numWorkspaces)
                 .ToListAsync();
 
             return new ItemsProviderResult<Workspace>(workspaces, totalCount);
@@ -55,7 +61,7 @@
         catch (Exception ex)
         {
             Logger.LogError(ex.Message);
-            return new ItemsProviderResult<Workspace>(Array.Empty<Workspace>(), 0);
+            return new ItemsProviderResult<Workspace>(new List<Workspace>(), 0);
         }
     }
 }

@@ -1,11 +1,17 @@
 using KonnClient.Components;
 using KonnClient.Data;
+using KonnClient.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddDbContext<KonnDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 builder.Services.AddSingleton<MockDataService>();
 

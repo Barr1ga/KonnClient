@@ -1,0 +1,22 @@
+﻿@using KonnClient.Data.Models
+
+<NavLink href="@($"/workspace/{WorkspaceId}/categories/{Category.Id}")" Match="NavLinkMatch.All">
+    <div class="flex items-center between space-x-4 p-[8px] rounded-[12px] hover:bg-sBackground transition-all ease-in-out cursor-pointer bg-sBackground border border-white hover:border-primary/30">
+        <div class="h-[32px] w-[32px] rounded-[8px] border border-white bg-tBackground flex items-center justify-center">
+        </div>
+
+        <div class="flex gap-x-[10px] items-center">
+            <span class="font-medium text-pText">
+                @Category.Name
+            </span>
+        </div>
+    </div>
+</NavLink>
+
+@code {
+    [Parameter]
+    public int WorkspaceId { get; set; }
+
+    [Parameter]
+    public Category Category { get; set; } = default!;
+}

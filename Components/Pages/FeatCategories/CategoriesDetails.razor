@@ -1,4 +1,4 @@
-﻿@page "/workspace/{WorkspaceId:int}/overview"
+﻿@page "/workspace/{WorkspaceId:int}/categories"
 @using KonnClient.Components.Pages.FeatContact
 @using KonnClient.Data
 @using KonnClient.Data.Models
@@ -24,13 +24,11 @@
 
     <div class="flex w-full gap-y-[32px] flex flex-col items-center">
         <div class="space-y-[24px] max-w-[800px] w-full">
-            <ContactsRecentList WorkspaceId="@WorkspaceId" />
 
             <div class="h-[1px] bg-border w-full max-w-[800px]" />
 
-            <div class="flex w-full space-x-[20px] flex flex-col items-center">
-                <ContactsList WorkspaceId="@WorkspaceId" />
-            </div>
+
+
         </div>
     </div>
 </div>
@@ -38,10 +36,14 @@
 @code {
     [Parameter]
     public int WorkspaceId { get; set; }
+    [Parameter]
+    public int ContactId { get; set; }
 
-    public string SelectedTab { get; set; } = "overview";
+    public string SelectedTab { get; set; } = "categories";
 
     public Workspace? Workspace { get; set; }
+
+    public Category? Category { get; set; }
 
     public List<TabModel> TabOptions { get; set; } = new List<TabModel>
     {
@@ -55,10 +57,9 @@
     {
         if (WorkspaceId == null)
         {
-            throw new Exception("WorkspaceId is null or invalid");
+            throw new Exception("WorkspaceId is null or empty");
         }
 
-        Workspace = MockDataService.Workspaces.FirstOrDefault(w => w.Id == WorkspaceId);
     }
 
     private void HandleTabSelected(string selectedTab)

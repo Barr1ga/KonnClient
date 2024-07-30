@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Components\Pages\FeatCategories\.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Bogus" Version="35.6.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
@@ -17,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Components\Pages\FeatCategories\.razor" />
+    <None Include="Components\Pages\FeatCategories\CategoriesList.razor" />
     <None Include="Components\Pages\FeatContact\ContactsRecentList.razor" />
     <None Include="Components\Pages\FeatContact\ContactsList.razor" />
     <None Include="Components\Pages\FeatWorkspace\WorkspaceDetails.razor" />

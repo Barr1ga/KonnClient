@@ -34,6 +34,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoriesDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yaWVzRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoriesList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yaWVzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoryRow.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yeVJvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatContact/ContactCard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q29udGFjdFxDb250YWN0Q2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -96,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Shared/KonnButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcS29ubkJ1dHRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Shared/KonnSwitch.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcS29ublN3aXRjaC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Shared/KonnTabs.razor]

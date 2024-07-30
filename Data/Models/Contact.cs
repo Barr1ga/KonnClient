@@ -28,8 +28,6 @@ public class Contact
 
     public bool IsFavorite { get; set; } = false;
 
-    public bool IsBlocked { get; set; } = false;
-
     public bool IsEmergency { get; set; } = false;
 
     public bool IsDeleted { get; set; } = false;

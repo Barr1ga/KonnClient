@@ -1,7 +1,5 @@
 ﻿@using KonnClient.Data
 @using KonnClient.Data.Models
-@inject ILogger<ContactsList> Logger
-@inject IDbContextFactory<KonnDbContext> ContextFactory
 
 <div class="flex flex-col gap-y-[20px] w-full max-w-[800px]">
     <div class="flex justify-between items-center w-full">
@@ -42,35 +40,19 @@
 
 @code {
     [Parameter]
-    public int WorkspaceId { get; set; }
+    public string WorkspaceId { get; set; } = string.Empty;
 
     public string SearchValue { get; set; } = string.Empty;
 
     private async ValueTask<ItemsProviderResult<Contact>> LoadContacts(ItemsProviderRequest request)
     {
-        try
-        {
-            using var _context = ContextFactory.CreateDbContext();
+        // Simulate fetching data from a service with a slight delay
+        await Task.Delay(500);
 
-            var totalCount = await _context.Contacts
-                .Where(w => w.WorkspaceId == WorkspaceId)
-                .CountAsync();
+        // Fetch the contacts and total count from the service
+        var result = await MockDataService.GetContacts(request.StartIndex, request.Count);
 
-            int numContacts = Math.Min(request.Count, totalCount - request.StartIndex);
-
-            var contacts = await _context.Contacts
-                .Where(c => c.WorkspaceId == WorkspaceId)
-                .OrderBy(c => c.CreatedAt)
-                .Skip(request.StartIndex)
-                .Take(numContacts)
-                .ToListAsync();
-
-            return new ItemsProviderResult<Contact>(contacts, totalCount);
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError(ex.Message);
-            return new ItemsProviderResult<Contact>(new List<Contact>(), 0);
-        }
+        // Return the fetched contacts and the total count
+        return new ItemsProviderResult<Contact>(result.Contacts, result.TotalCount);
     }
 }

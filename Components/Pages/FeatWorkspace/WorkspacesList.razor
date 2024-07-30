@@ -8,14 +8,16 @@
 <div class="pt-[80px]">
     <div class="space-y-[24px] max-w-[800px]">
         <div class="space-y-[8px]">
-            <h1 class="text-[36px] font-bold">Workspaces</h1>
+            <h1 class="text-[36px] font-semibold">Workspaces</h1>
             <span class="text-sText/60 font-medium">Every week, we feature some of our favourite workspaces of different users. You can also check out some great calendars from the community.</span>
         </div>
+        
+        <InputText id="search" @bind-Value="@SearchValue" placeholder="Search a contact" class="w-full px-[14px] py-[8px] border border-border rounded-[12px] transition-all easei-in-out bg-qBackground hover:bg-primary/10 focus:bg-pBackground cursor-pointer focus:cursor-text" />
 
         <div class="flex flex-col space-y-[8px] h-full">
             <Virtualize Context="workspace" ItemsProvider="@GetWorkspaces">
                 <ItemContent>
-                    <WorkspaceRow Workspace="@workspace" />
+                    <WorkspaceRow @key="workspace.Id" Workspace="@workspace" />
                 </ItemContent>
 
                 <Placeholder>
@@ -34,8 +36,8 @@
 
 @code {
     private int userId = 1;
-    private List<Workspace> Workspaces { get; set; } = new List<Workspace>();
-    private int Count { get; set; }
+
+    public string SearchValue { get; set; } = string.Empty;
 
     private async ValueTask<ItemsProviderResult<Workspace>> GetWorkspaces(ItemsProviderRequest request)
     {

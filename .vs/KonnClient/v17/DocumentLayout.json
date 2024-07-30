@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcategories\\categoriesdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcategories\\categoriesdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactrow.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactrow.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcategories\\categorieslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcategories\\categorieslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcategories\\categoryrow.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcategories\\categoryrow.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featworkspace\\workspaceslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featworkspace\\workspaceslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -11,47 +31,20 @@
       "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featworkspace\\workspacerow.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\data\\models\\workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:data\\models\\workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featworkspace\\workspacedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featworkspace\\workspacedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featsignin\\signin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featsignin\\signin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactcard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactinformation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactinformation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\data\\mockdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:data\\mockdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KonnDb/True/SqlTable/dbo.Workspaces.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\migrations\\20240730100943_initdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:migrations\\20240730100943_initdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featsignin\\signinform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featsignin\\signinform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\data\\contexts\\seed\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:data\\contexts\\seed\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -60,179 +53,156 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 277,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 251,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ContactDetails.razor",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactDetails.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactDetails.razor",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactDetails.razor",
-              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactDetails.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T11:47:02.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ContactCard.razor",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactCard.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactCard.razor",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactCard.razor",
-              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactCard.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T11:47:01.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ContactInformation.razor",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactInformation.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactInformation.razor",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactInformation.razor",
-              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactInformation.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T11:46:59.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\_Imports.razor",
-              "RelativeToolTip": "Components\\_Imports.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T11:12:20.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "WorkspacesList.razor",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspacesList.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\FeatWorkspace\\WorkspacesList.razor",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspacesList.razor",
               "RelativeToolTip": "Components\\Pages\\FeatWorkspace\\WorkspacesList.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T10:36:23.197Z",
+              "WhenOpened": "2024-07-30T15:53:35.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MockDataService.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Data\\MockDataService.cs",
-              "RelativeDocumentMoniker": "Data\\MockDataService.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Data\\MockDataService.cs",
-              "RelativeToolTip": "Data\\MockDataService.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwEAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T11:20:44.6Z",
+              "DocumentIndex": 4,
+              "Title": "CategoryRow.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatCategories\\CategoryRow.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatCategories\\CategoryRow.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatCategories\\CategoryRow.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatCategories\\CategoryRow.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T16:01:35.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "20240730100943_InitDatabase.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Migrations\\20240730100943_InitDatabase.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240730100943_InitDatabase.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Migrations\\20240730100943_InitDatabase.cs",
-              "RelativeToolTip": "Migrations\\20240730100943_InitDatabase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T10:09:43.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Seed.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Data\\Contexts\\Seed\\Seed.cs",
-              "RelativeDocumentMoniker": "Data\\Contexts\\Seed\\Seed.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Data\\Contexts\\Seed\\Seed.cs",
-              "RelativeToolTip": "Data\\Contexts\\Seed\\Seed.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAGYAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T10:06:05.857Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 237,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "dbo.Workspaces [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KonnDb/True/SqlTable/dbo.Workspaces.sql",
-              "ToolTip": "dbo.Workspaces [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-07-30T11:15:37.485Z",
+              "DocumentIndex": 3,
+              "Title": "CategoriesList.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatCategories\\CategoriesList.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatCategories\\CategoriesList.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatCategories\\CategoriesList.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatCategories\\CategoriesList.razor",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAADgAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T15:51:34.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CategoriesDetails.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatCategories\\CategoriesDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatCategories\\CategoriesDetails.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatCategories\\CategoriesDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatCategories\\CategoriesDetails.razor",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAACAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T16:02:20.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "WorkspaceRow.razor",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspaceRow.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\FeatWorkspace\\WorkspaceRow.razor",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspaceRow.razor",
               "RelativeToolTip": "Components\\Pages\\FeatWorkspace\\WorkspaceRow.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T10:42:43.404Z",
+              "WhenOpened": "2024-07-30T16:03:38.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Workspace.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Data\\Models\\Workspace.cs",
-              "RelativeDocumentMoniker": "Data\\Models\\Workspace.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Data\\Models\\Workspace.cs",
-              "RelativeToolTip": "Data\\Models\\Workspace.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAiwA0AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T10:41:36.87Z",
+              "DocumentIndex": 7,
+              "Title": "WorkspaceDetails.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspaceDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatWorkspace\\WorkspaceDetails.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspaceDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatWorkspace\\WorkspaceDetails.razor",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T15:56:21.07Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 263,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContactDetails.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactDetails.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactDetails.razor",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAAAIMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T16:07:50.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ContactsList.razor",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactsList.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactsList.razor",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactsList.razor",
-              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactsList.razor",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAB8AAAALAAAA",
+              "DocumentIndex": 8,
+              "Title": "SignIn.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatSignIn\\SignIn.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatSignIn\\SignIn.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatSignIn\\SignIn.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatSignIn\\SignIn.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-30T10:36:17.897Z",
+              "WhenOpened": "2024-07-30T16:03:36.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T09:54:57.661Z",
+              "Title": "SignInForm.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatSignIn\\SignInForm.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatSignIn\\SignInForm.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatSignIn\\SignInForm.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatSignIn\\SignInForm.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T16:03:36.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContactRow.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactRow.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactRow.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactRow.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactRow.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T15:55:54.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ContactsList.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactsList.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactsList.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactsList.razor",
+              "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactsList.razor",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAEgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T10:36:17.897Z",
               "EditorCaption": ""
             }
           ]

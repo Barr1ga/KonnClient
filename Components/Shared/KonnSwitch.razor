@@ -1,0 +1,27 @@
+﻿@rendermode InteractiveServer
+
+<button @onclick="() => OnClick(!Value)"
+        class="flex p-[4px] w-[50px] gap-y-[8px] transition-all rounded-full ease-in-out group @(Value ? "bg-primary" : "bg-tBackground")"
+        aria-selected="@Value">
+    <div class="h-[20px] bg-white drop-shadow w-[20px] rounded-full bg-gray-300 transition-transform"
+         style="transform: @(Value ? "translateX(18px)" : "translateX(0)")" />
+</button>
+
+@code {
+    [Parameter]
+    public bool Value { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> OnSwitchClicked { get; set; }
+
+    private async Task OnClick(bool value)
+    {
+        await OnSwitchClicked.InvokeAsync(value);
+    }
+
+    public class SwitchModel
+    {
+        public string Label { get; set; } = string.Empty;
+        public string Value { get; set; } = string.Empty;
+    }
+}

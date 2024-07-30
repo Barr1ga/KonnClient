@@ -1,5 +1,6 @@
 ﻿@using KonnClient.Data
 @using KonnClient.Data.Models
+
 <div class="flex flex-col gap-y-[20px] w-full max-w-[800px]">
     <div class="flex justify-between items-center w-full">
         <div class="gap-x-[12px]">
@@ -14,21 +15,23 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-[16px]">
         <div class="flex flex-col h-[150px] items-center justify-center between space-y-4 p-[8px] rounded-[12px] bg-qBackground/50 hover:bg-qBackground transition-all ease-in-out cursor-pointer border border-border hover:border-primary/20">
-            <span class="font-semibold text-pText/30">
+            <span class="font-semibold text-pText">
                 New Contact
             </span>
+                
+            <KonnButton Text="+" />
         </div>
 
         @foreach (var contact in Contacts.Take(3))
         {
-            <ContactCard key="@contact" Contact="@contact" WorkspaceId="@WorkspaceId" />
+            <ContactCard Contact="@contact" WorkspaceId="@WorkspaceId" />
         }
     </div>
 </div>
 
 @code {
     [Parameter]
-    public string WorkspaceId { get; set; } = string.Empty;
+    public int WorkspaceId { get; set; }
 
     public string SearchValue { get; set; } = string.Empty;
 

@@ -78,7 +78,6 @@ public class MockDataService
                     Image = "john_doe_image.png",
                     Notes = "Important contact",
                     IsFavorite = true,
-                    IsBlocked = false,
                     IsEmergency = false,
                     IsDeleted = false,
                     CreatedAt = DateTime.Now,

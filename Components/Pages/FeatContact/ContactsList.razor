@@ -27,7 +27,7 @@
                 </div>
 
                 <div>
-                    <ContactForm Method="Add" />
+                    <ContactForm Method="Add" OnCancel="OnCancel" />
                 </div>
             </div>
         </KonnModal>
@@ -60,6 +60,11 @@
     public string SearchValue { get; set; } = string.Empty;
 
     public bool IsAddContactVisible { get; set; } = false;
+
+    private void OnCancel()
+    {
+        IsAddContactVisible = false;
+    }
 
     private async ValueTask<ItemsProviderResult<Contact>> LoadContacts(ItemsProviderRequest request)
     {

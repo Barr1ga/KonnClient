@@ -90,7 +90,7 @@
 
     <div class="flex flex-col gap-y-[8px]">
         <KonnButton Text="@($"{Method} Contact")" ClassName="w-full" />
-        <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" />
+        <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="OnCancelClicked" />
     </div>
 </EditForm>
 
@@ -103,6 +103,9 @@
 
     [Parameter]
     public string Method { get; set; } = "Add"; // New / Update
+
+    [Parameter]
+    public EventCallback OnCancel { get; set; }
 
     protected override void OnInitialized()
     {
@@ -129,5 +132,10 @@
 
     private void OnInvalidSubmit()
     {
+    }
+
+    private async Task OnCancelClicked()
+    {
+        await OnCancel.InvokeAsync();
     }
 }

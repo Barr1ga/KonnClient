@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\shared\\konnbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\shared\\konnbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|c:\\users\\user\\documents\\github\\konnclient\\components\\pages\\featcontact\\contactinformation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3702F0EB-65C1-4E0F-B228-DCC4119BDF1E}|KonnClient.csproj|solutionrelative:components\\pages\\featcontact\\contactinformation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -40,14 +44,14 @@
               "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactsList.razor",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactsList.razor",
               "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactsList.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-31T07:24:09.476Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "WorkspaceInformation.razor",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatWorkspace\\WorkspaceInformation.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\FeatWorkspace\\WorkspaceInformation.razor",
@@ -60,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "KonnTabs.razor",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Shared\\KonnTabs.razor",
               "RelativeDocumentMoniker": "Components\\Shared\\KonnTabs.razor",
@@ -75,11 +79,24 @@
         },
         {
           "DockedWidth": 256,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "KonnButton.razor",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Shared\\KonnButton.razor",
+              "RelativeDocumentMoniker": "Components\\Shared\\KonnButton.razor",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Shared\\KonnButton.razor",
+              "RelativeToolTip": "Components\\Shared\\KonnButton.razor",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T09:00:27.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ContactForm.razor",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactForm.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactForm.razor",
@@ -92,13 +109,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ContactInformation.razor",
               "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactInformation.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\FeatContact\\ContactInformation.razor",
               "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\KonnClient\\Components\\Pages\\FeatContact\\ContactInformation.razor",
               "RelativeToolTip": "Components\\Pages\\FeatContact\\ContactInformation.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA5AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-31T06:36:53.997Z",
               "EditorCaption": ""

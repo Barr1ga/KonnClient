@@ -1,22 +1,22 @@
 ﻿<button class="@GetButtonCssClass()" @onclick="HandleClick" disabled="@IsDisabled" type="@Type">
     @if (Loading)
     {
-        <span class="spinner-border" style="border-color: @SpinnerColor"></span>
+        <div class="spinner-border" style="border-color: @SpinnerColor"></div>
     }
 
-    @if (StartIcon != null && !IsIconOnly)
+    @if (StartIcon != null)
     {
-        <span class="start-icon">@StartIcon</span>
+        <div class="start-icon">@StartIcon</div>
     }
 
     @if (!Loading && !IsIconOnly)
     {
-        <span class="@GetTextCssClass() font-medium">@Text</span>
+        <div class="@GetTextCssClass() font-medium">@Text</div>
     }
 
     @if (EndIcon != null)
     {
-        <span class="end-icon">@EndIcon</span>
+        <div class="end-icon">@EndIcon</div>
     }
 </button>
 
@@ -26,7 +26,7 @@
     [Parameter] public string Variant{ get; set; } = "primary";
     [Parameter] public string Type { get; set; } = "primary";
     [Parameter] public bool Bordered { get; set; } = false;
-    [Parameter] public string Text { get; set; }
+    [Parameter] public string Text { get; set; } = string.Empty;
     [Parameter] public RenderFragment StartIcon { get; set; }
     [Parameter] public RenderFragment EndIcon { get; set; }
     [Parameter] public bool Disabled { get; set; } = false;
@@ -45,15 +45,15 @@
         var btnColor = Variant switch
         {
             "primary" => Success ? "bg-success" : Danger ? "bg-danger" : "bg-primary",
-            "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-qBackground hover:bg-primary text-pText hover:text-qText",
+            "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-primary/10 hover:bg-primary/50 text-pText hover:text-qText",
             _ => "bg-pBackground border-border"
         };
 
         var btnSize = Size switch
         {
-            "sm" => "px-[8px] py-[4px]",
-            "md" => "px-[14px] py-[8px]",
-            "lg" => "p-4",
+            "sm" => IsIconOnly ? "p-[4px]" : "px-[8px] py-[4px]",
+            "md" => IsIconOnly ? "p-[8px]": "px-[14px] py-[8px]",
+            "lg" => IsIconOnly ? "p-4" : "p-4",
             _ => "px-3 py-2 "
         };
 
@@ -69,7 +69,7 @@
         var disabled = (Disabled ? "opacity-50" : "");
         var bordered = Bordered ? "border" : "";
 
-        return $"group {btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {ClassName} transition-all ease-in-out";
+        return $"group gap-x-[6px] {btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {ClassName} transition-all ease-in-out";
     }
 
 
@@ -86,7 +86,7 @@
         var btnTextColor = Variant switch
         {
             "primary" => "text-white",
-            "secondary" => Success ? "text-success" : Danger ? "text-danger" : "text-sText/70 hover:text-white",
+            "secondary" => Success ? "text-success" : Danger ? "text-danger" : "text-sText/70 group-hover:text-white",
             _ => "text-primary"
         };
 

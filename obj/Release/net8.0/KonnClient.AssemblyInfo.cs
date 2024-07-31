@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KonnClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68e54f661056481c93a8d76e42ce78e58d174945")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14c6dcb0524184a1c52978f71964b59a84dc8f6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("KonnClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KonnClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

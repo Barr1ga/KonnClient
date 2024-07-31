@@ -1,11 +1,10 @@
-﻿@using KonnClient.Components.Pages.FeatContact
-@using KonnClient.Components.Pages.FeatWorkspace
+﻿@page "/workspace/{WorkspaceId:int}/settings"
+@using KonnClient.Components.Pages.FeatContact
 @using KonnClient.Data
 @using KonnClient.Data.Models
 @using static KonnClient.Components.Shared.KonnTabs
-@inject NavigationManager Navigation
 @rendermode InteractiveServer
-@inject ILogger<CategoriesDetails> Logger
+@inject ILogger<WorkspaceOverview> Logger
 @inject NavigationManager Navigation
 @inject IDbContextFactory<KonnDbContext> ContextFactory
 
@@ -16,11 +15,11 @@
 
     <div class="flex w-full gap-y-[32px] flex flex-col items-center">
         <div class="space-y-[24px] max-w-[800px] w-full">
+            <div class="flex w-full space-x-[20px] flex flex-col items-center">
+                <ContactsList WorkspaceId="@WorkspaceId" />
+            </div>
 
             <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-
-
         </div>
     </div>
 </div>
@@ -30,8 +29,6 @@
     public int WorkspaceId { get; set; }
 
     public Workspace? Workspace { get; set; }
-
-    public Category? Category { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -47,4 +44,6 @@
             Logger.LogError(ex.Message);
         }
     }
+
+    
 }

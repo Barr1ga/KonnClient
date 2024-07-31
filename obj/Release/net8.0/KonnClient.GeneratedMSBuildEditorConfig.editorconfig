@@ -86,12 +86,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0U2lnblVwXFNpZ25VcEZvcm0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZURldGFpbHMucmF6b3I=
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceCategories.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZUNhdGVnb3JpZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceInformation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZUluZm9ybWF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZU92ZXJ2aWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceRow.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZVJvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspaceSettings.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0V29ya3NwYWNlXFdvcmtzcGFjZVNldHRpbmdzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatWorkspace/WorkspacesList.razor]

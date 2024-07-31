@@ -1,0 +1,68 @@
+﻿@using static KonnClient.Components.Shared.KonnTabs
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<div class="w-full flex flex-col items-center border-b border-border pt-[20px] space-y-[32px] bg-gradient-to-b from-[#1f5ccb30] via-[#de3163010] to-transparent pt-[80px]">
+    <div class="space-y-[24px] max-w-[800px] w-full">
+        <div class="space-y-[8px]">
+            <h1 class="text-[36px] font-semibold">@Workspace?.Name</h1>
+            <span class="text-sText/40 font-medium">@Workspace?.Description</span>
+        </div>
+    </div>
+
+    <div class="flex w-full max-w-[800px] space-x-[20px]">
+        <KonnTabs SelectedTab="@SelectedTab" TabOptions="@TabOptions" OnTabSelected="HandleTabSelected" />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Workspace Workspace { get; set; } = default!;
+
+    public string SelectedTab { get; set; } = "overview";
+
+    public List<TabModel> TabOptions { get; set; } = new List<TabModel>
+    {
+        new TabModel { Label = "Overview", Value = "overview" },
+        new TabModel { Label = "Categories", Value = "categories" },
+        new TabModel { Label = "Settings", Value = "settings" }
+    };
+
+    private void HandleTabSelected(string selectedTab)
+    {
+        Navigation.NavigateTo($"/workspace/{Workspace.Id}/{selectedTab}");
+        SelectedTab = selectedTab;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        UpdateSelectedTab(Navigation.Uri);
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        UpdateSelectedTab(e.Location);
+        StateHasChanged();
+    }
+
+    private void UpdateSelectedTab(string uri)
+    {
+        var segments = new Uri(uri).Segments;
+        var tab = segments.LastOrDefault()?.Trim('/');
+
+        if (tab != null && TabOptions.Any(t => t.Value == tab))
+        {
+            SelectedTab = tab;
+        }
+        else
+        {
+            SelectedTab = "overview";
+        }
+    }
+
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+    }
+}

@@ -1,13 +1,20 @@
 ﻿@using KonnClient.Data.Models
+@inject ILogger<CategoryRow> Logger
+@inject IDbContextFactory<KonnDbContext> ContextFactory
 
 <NavLink href="@($"/workspace/{WorkspaceId}/categories/{Category.Id}")" Match="NavLinkMatch.All">
     <div class="flex items-center between space-x-4 p-[8px] rounded-[12px] hover:bg-sBackground transition-all ease-in-out cursor-pointer bg-sBackground border border-white hover:border-primary/30">
-        <div class="h-[32px] w-[32px] rounded-[8px] border border-white bg-tBackground flex items-center justify-center">
+        <div style="background-color: @Category.Color" class="h-[32px] w-[32px] rounded-full border border-white flex items-center justify-center">
         </div>
 
-        <div class="flex gap-x-[10px] items-center">
+        <div class="flex gap-x-[10px] items-center justify-between flex-1">
             <span class="font-medium text-pText">
                 @Category.Name
+            </span>
+
+
+            <span class="text-sText/50 pr-[6px]">
+                @ContactsCount Contacts
             </span>
         </div>
     </div>
@@ -19,4 +26,20 @@
 
     [Parameter]
     public Category Category { get; set; } = default!;
+
+    public int ContactsCount { get; set; } = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            using var _context = ContextFactory.CreateDbContext();
+
+            ContactsCount = await _context.ContactCategories.Where(cc => cc.CategoryId == Category.Id).CountAsync();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex.Message);
+        }
+    }
 }

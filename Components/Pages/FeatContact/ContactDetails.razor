@@ -1,5 +1,6 @@
 ﻿@page "/workspace/{WorkspaceId:int}/contact/{ContactId:int}"
 @using KonnClient.Components.Pages.FeatContact
+@using KonnClient.Components.Pages.FeatWorkspace
 @using KonnClient.Data
 @using KonnClient.Data.Models
 @using static KonnClient.Components.Shared.KonnTabs
@@ -9,155 +10,103 @@
 <PageTitle>@Workspace?.Name</PageTitle>
 
 <div class="flex flex-col gap-y-[32px] w-full pb-[80px]">
-    <div class="w-full flex flex-col items-center border-b border-border pt-[20px] space-y-[32px] bg-gradient-to-b from-[#2874fe20] via-[#28fefb07] to-transparent pt-[80px]">
-        <div class="space-y-[24px] max-w-[800px] w-full">
-            <div class="space-y-[8px]">
-                <h1 class="text-[36px] font-semibold">@Workspace?.Name</h1>
-                <span class="text-sText/40 font-medium">@Workspace?.Description</span>
-            </div>
-        </div>
-
-        <div class="flex w-full max-w-[800px] space-x-[20px]">
-            <KonnTabs SelectedTab="@SelectedTab" TabOptions="@TabOptions" OnTabSelected="HandleTabSelected" />
-        </div>
-    </div>
-
-    <div class="flex w-full gap-y-[32px] flex flex-col items-center">
-        <div class="space-y-[24px] max-w-[800px] w-full">
-            <div class="flex items-center gap-x-[8px]">
-                <NavLink href="@($"/workspace/{WorkspaceId}/overview")" Match="NavLinkMatch.All">
-                    <span class="text-2xl text-pText font-bold">
-                        ←
-                    </span>
-                </NavLink>
-
-                <span class="text-lg text-pText font-semibold">
-                    Contact Information
-                </span>
-            </div>
-            
-            <ContactInformation Contact="@Contact" />
-
-            <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-            <div class="flex flex-col gap-y-[4px]">
-                <span class="text-lg text-pText font-semibold">
-                    Transfer Contact
-                </span>
-
-                <span class="text-sText/50 pb-[8px]">
-                    This event is managed by asdasdasd, with the admins of the calendar having manage access to the event. You can move it to a different calendar.
-                </span>
-
-                <div class="">
-                    <KonnButton Text="Move to another Workspace" />
-                </div>
-            </div>
-            
-            <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-            <div class="flex flex-col gap-y-[4px]">
-                <span class="text-lg text-pText font-semibold">
-                    Clone Contact
-                </span>
-
-                <span class="text-sText/50 pb-[8px]">
-                    Create a new event with the same information as this one. Everything except the guest list and event posts will be copied over.
-                </span>
-
-                <div class="">
-                    <KonnButton Text="Clone Contact" />
-                </div>
-            </div>
-
-            <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-            <div class="flex flex-col gap-y-[4px]">
-                <span class="text-lg text-pText font-semibold">
-                    Delete Contact
-                </span>
-
-                <span class="text-sText/50 pb-[8px]">
-                    Cancel and permanently delete this event. This operation cannot be undone. If there are any registered guests, we will notify them that the event has been cancelled.
-                </span>
-
-                <div class="">
-                    <KonnButton Text="Delete Contact" Danger="true" />
-                </div>
-            </div>
-
-            <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-            <div class="flex flex-col gap-y-[4px]">
-                <span class="text-sText/40 font-medium text-[14px]">Learn more about managing contacts</span>
-            </div>
-          
-            <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
+    <WorkspaceInformation Workspace="@Workspace"/>
+     
+    @if (Contact != null) {
+        <div class="flex w-full gap-y-[32px] flex flex-col items-center">
             <div class="space-y-[24px] max-w-[800px] w-full">
-                <ContactsRecentList WorkspaceId="@WorkspaceId" />
+                <div class="flex items-center gap-x-[8px]">
+                    <NavLink href="@($"/workspace/{WorkspaceId}/overview")" Match="NavLinkMatch.All">
+                        <span class="text-2xl text-pText font-bold">
+                            ←
+                        </span>
+                    </NavLink>
+
+                    <span class="text-lg text-pText font-semibold">
+                        Contact Information
+                    </span>
+                </div>
+            
+                <ContactInformation Contact="@Contact" />
+
+                <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+                <div class="flex flex-col gap-y-[4px]">
+                    <span class="text-lg text-pText font-semibold">
+                        Transfer Contact
+                    </span>
+
+                    <span class="text-sText/50 pb-[8px]">
+                        This event is managed by asdasdasd, with the admins of the calendar having manage access to the event. You can move it to a different calendar.
+                    </span>
+
+                    <div class="">
+                        <KonnButton Text="Move to another Workspace" />
+                    </div>
+                </div>
+            
+                <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+                <div class="flex flex-col gap-y-[4px]">
+                    <span class="text-lg text-pText font-semibold">
+                        Clone Contact
+                    </span>
+
+                    <span class="text-sText/50 pb-[8px]">
+                        Create a new event with the same information as this one. Everything except the guest list and event posts will be copied over.
+                    </span>
+
+                    <div class="">
+                        <KonnButton Text="Clone Contact" />
+                    </div>
+                </div>
+
+                <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+                <div class="flex flex-col gap-y-[4px]">
+                    <span class="text-lg text-pText font-semibold">
+                        Delete Contact
+                    </span>
+
+                    <span class="text-sText/50 pb-[8px]">
+                        Cancel and permanently delete this event. This operation cannot be undone. If there are any registered guests, we will notify them that the event has been cancelled.
+                    </span>
+
+                    <div class="">
+                        <KonnButton Text="Delete Contact" Danger="true" />
+                    </div>
+                </div>
+
+                <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+                <div class="flex flex-col gap-y-[4px]">
+                    <span class="text-sText/40 font-medium text-[14px]">Learn more about managing contacts</span>
+                </div>
+          
+                <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+                <div class="space-y-[24px] max-w-[800px] w-full">
+                    <ContactsRecentList WorkspaceId="@WorkspaceId" />
+                </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 
 @code {
     [Parameter]
     public int WorkspaceId { get; set; }
+
     [Parameter]
     public int ContactId { get; set; }
-
-    public string SelectedTab { get; set; } = "overview";
 
     public Workspace? Workspace { get; set; }
 
     public Contact? Contact { get; set; }
 
-    public List<TabModel> TabOptions { get; set; } = new List<TabModel>
-    {
-        new TabModel { Label = "Overview", Value = "overview" },
-        new TabModel { Label = "Categories", Value = "categories" },
-        new TabModel { Label = "Trash", Value = "trash" },
-        new TabModel { Label = "Settings", Value = "settings" }
-    };
-
     protected override async Task OnInitializedAsync()
     {
-        if (WorkspaceId == null)
-        {
-            throw new Exception("WorkspaceId is null or empty");
-        }
-        /*
-        if (int.TryParse(WorkspaceId, out int workspaceIdInt))
-        {
-            Workspace = MockDataService.Workspaces.FirstOrDefault(w => w.Id == workspaceIdInt);
-        }
-
-        if (int.TryParse(ContactId, out int contactIdInt))
-        {
-            Contact = MockDataService.Contacts.FirstOrDefault(c => c.Id == contactIdInt);
-        }*/
-    }
-
-    private void HandleTabSelected(string selectedTab)
-    {
-        if (selectedTab == "overview")
-        {
-            Navigation.NavigateTo($"/workspace/{WorkspaceId}/overview");
-        }
-        else if (selectedTab == "categories")
-        {
-            Navigation.NavigateTo($"/workspace/{WorkspaceId}/categories");
-        }
-        else if (selectedTab == "trash")
-        {
-            Navigation.NavigateTo($"/workspace/{WorkspaceId}/trash");
-        }
-        else if (selectedTab == "settings")
-        {
-            Navigation.NavigateTo($"/workspace/{WorkspaceId}/settings");
-        }
-
-        SelectedTab = selectedTab;
+        Workspace = MockDataService.Workspaces.FirstOrDefault(w => w.Id == WorkspaceId);
+        Contact = MockDataService.Contacts.FirstOrDefault(c => c.Id == ContactId);
     }
 }

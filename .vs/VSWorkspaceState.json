@@ -3,12 +3,12 @@
     "",
     "\\Components",
     "\\Components\\Pages",
+    "\\Components\\Pages\\FeatContact",
     "\\Components\\Pages\\FeatSignIn",
     "\\Components\\Pages\\FeatSignUp",
     "\\Components\\Pages\\FeatWorkspace",
-    "\\Components\\Shared",
-    "\\Models"
+    "\\Components\\Shared"
   ],
-  "SelectedNode": "\\KonnClient.sln",
+  "SelectedNode": "\\Components\\Pages\\FeatContact\\ContactInformation.razor",
   "PreviewInSolutionExplorer": false
 }

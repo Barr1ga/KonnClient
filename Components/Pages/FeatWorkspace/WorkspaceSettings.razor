@@ -15,11 +15,73 @@
 
     <div class="flex w-full gap-y-[32px] flex flex-col items-center">
         <div class="space-y-[24px] max-w-[800px] w-full">
-            <div class="flex w-full space-x-[20px] flex flex-col items-center">
-                <ContactsList WorkspaceId="@WorkspaceId" />
+            <div class="flex flex-col gap-y-[4px]">
+                <span class="text-lg text-pText font-semibold">
+                    Update Workspace Information
+                </span>
+
+                <span class="text-sText/50 pb-[8px]">
+                    Create a new event with the same information as this one. Everything except the guest list and event posts will be copied over.
+                </span>
+
+                <div class="">
+                    <KonnButton Text="Update Workspace" />
+                </div>
             </div>
 
             <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+            <div class="flex flex-col gap-y-[4px]">
+                <span class="text-lg text-pText font-semibold">
+                    Clone Workspace
+                </span>
+
+                <span class="text-sText/50 pb-[8px]">
+                    Create a new event with the same information as this one. Everything except the guest list and event posts will be copied over.
+                </span>
+
+                <div class="">
+                    <KonnButton Text="Clone Workspace" />
+                </div>
+            </div>
+
+            <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+             <div class="flex flex-col gap-y-[4px]">
+                <span class="text-lg text-pText font-semibold">
+                    Reset Workspace
+                </span>
+
+                <span class="text-sText/50 pb-[8px]">
+                    Create a new event with the same information as this one. Everything except the guest list and event posts will be copied over.
+                </span>
+
+                <div class="">
+                    <KonnButton Text="Reset Workspace" Danger />
+                </div>
+            </div>
+
+            <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+            <div class="flex flex-col gap-y-[4px]">
+                <span class="text-lg text-pText font-semibold">
+                    Delete Workspace
+                </span>
+
+                <span class="text-sText/50 pb-[8px]">
+                    Cancel and permanently delete this event. This operation cannot be undone. If there are any registered guests, we will notify them that the event has been cancelled.
+                </span>
+
+                <div class="">
+                    <KonnButton Text="Delete Contact" Danger />
+                </div>
+            </div>
+
+            <div class="h-[1px] bg-border w-full max-w-[800px]" />
+
+            <div class="flex flex-col gap-y-[4px]">
+                <span class="text-sText/40 font-medium text-[14px]">Learn more about managing workspaces</span>
+            </div>
         </div>
     </div>
 </div>
@@ -44,6 +106,4 @@
             Logger.LogError(ex.Message);
         }
     }
-
-    
 }

@@ -1,6 +1,6 @@
 ﻿@rendermode InteractiveServer
 
-<button @onclick="() => OnClick(!Value)"
+<button type="button" @onclick="() => OnClick(!Value)"
         class="flex p-[4px] w-[50px] gap-y-[8px] transition-all rounded-full ease-in-out group @(Value ? "bg-primary" : "bg-tBackground")"
         aria-selected="@Value">
     <div class="h-[20px] bg-white drop-shadow w-[20px] rounded-full bg-gray-300 transition-transform"

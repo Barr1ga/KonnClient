@@ -28,7 +28,8 @@
                 </div>
             </div>
 
-            <KonnButton Text="Edit Contact" OnClick="() => IsUpdateContactVisible = true" Variant="secondary" />
+            <KonnButton Text="Edit Contact" OnClick="() => IsUpdateContactVisible = true" Variant="secondary" >
+            </KonnButton>
 
             <KonnModal IsVisible="@IsUpdateContactVisible" OnClose="@(() => IsUpdateContactVisible = false)">
                 <div class="flex flex-col space-y-[16px]">

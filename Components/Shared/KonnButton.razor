@@ -44,7 +44,7 @@
     {
         var btnColor = Variant switch
         {
-            "primary" => Success ? "bg-success" : Danger ? "bg-danger" : "bg-primary",
+            "primary" => Success ? "bg-success" : Danger ? "bg-danger" : "bg-primary hover:bg-primary/70",
             "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-primary/10 hover:bg-primary/50 text-pText hover:text-qText",
             _ => "bg-pBackground border-border"
         };

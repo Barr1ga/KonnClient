@@ -37,7 +37,7 @@
     [Parameter] public bool IsIconOnly { get; set; } = false;
     [Parameter] public string Size { get; set; } = "md";
     [Parameter] public string Justify { get; set; } = "center";
-    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public string ClassName { get; set; } = "";
     [Parameter] public bool Highlight { get; set; } = false;
 
     private string GetButtonCssClass()
@@ -45,7 +45,7 @@
         var btnColor = Variant switch
         {
             "primary" => Success ? "bg-success" : Danger ? "bg-danger" : "bg-primary hover:bg-primary/70",
-            "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-primary/10 hover:bg-primary/50 text-pText hover:text-qText",
+            "secondary" => Success ? "bg-success/20" : Danger ? "bg-danger/20" : "bg-primary/[0.05] hover:bg-primary/50 text-pText hover:text-qText",
             _ => "bg-pBackground border-border"
         };
 
@@ -69,7 +69,7 @@
         var disabled = (Disabled ? "opacity-50" : "");
         var bordered = Bordered ? "border" : "";
 
-        return $"group gap-x-[6px] {btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {Class} transition-all ease-in-out";
+        return $"group gap-x-[6px] {btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {ClassName} transition-all ease-in-out";
     }
 
 

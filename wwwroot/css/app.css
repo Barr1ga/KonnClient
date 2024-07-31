@@ -578,6 +578,14 @@ video {
   left: 8px;
 }
 
+.right-\[20px\] {
+  right: 20px;
+}
+
+.top-\[20px\] {
+  top: 20px;
+}
+
 .top-\[8px\] {
   top: 8px;
 }
@@ -948,12 +956,12 @@ video {
   background-color: rgb(14 15 15 / var(--tw-bg-opacity));
 }
 
-.bg-primary\/10 {
-  background-color: rgb(14 15 15 / 0.1);
-}
-
 .bg-primary\/\[0\.01\] {
   background-color: rgb(14 15 15 / 0.01);
+}
+
+.bg-primary\/\[0\.05\] {
+  background-color: rgb(14 15 15 / 0.05);
 }
 
 .bg-qBackground {
@@ -1116,12 +1124,12 @@ video {
   padding-right: 6px;
 }
 
-.pt-5 {
-  padding-top: 1.25rem;
-}
-
 .pt-\[20px\] {
   padding-top: 20px;
+}
+
+.pt-\[30px\] {
+  padding-top: 30px;
 }
 
 .pt-\[80px\] {
@@ -1198,11 +1206,6 @@ video {
   color: rgb(14 15 15 / var(--tw-text-opacity));
 }
 
-.text-sText {
-  --tw-text-opacity: 1;
-  color: rgb(49 54 64 / var(--tw-text-opacity));
-}
-
 .text-sText\/40 {
   color: rgb(49 54 64 / 0.4);
 }
@@ -1247,6 +1250,11 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .drop-shadow-xl {
   --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1284,10 +1292,6 @@ video {
   transition-duration: 150ms;
 }
 
-.duration-300 {
-  transition-duration: 300ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1309,8 +1313,12 @@ video {
   background-color: rgb(14 15 15 / 0.1);
 }
 
-.hover\:bg-primary\/20:hover {
-  background-color: rgb(14 15 15 / 0.2);
+.hover\:bg-primary\/50:hover {
+  background-color: rgb(14 15 15 / 0.5);
+}
+
+.hover\:bg-primary\/70:hover {
+  background-color: rgb(14 15 15 / 0.7);
 }
 
 .hover\:bg-qBackground:hover {
@@ -1321,22 +1329,6 @@ video {
 .hover\:bg-sBackground:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(253 253 253 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-primary\/50:hover {
-  background-color: rgb(14 15 15 / 0.5);
-}
-
-.hover\:bg-primary\/80:hover {
-  background-color: rgb(14 15 15 / 0.8);
-}
-
-.hover\:bg-primary\/60:hover {
-  background-color: rgb(14 15 15 / 0.6);
-}
-
-.hover\:bg-primary\/70:hover {
-  background-color: rgb(14 15 15 / 0.7);
 }
 
 .hover\:text-pText:hover {
@@ -1384,6 +1376,14 @@ video {
 
   .sm\:max-w-lg {
     max-width: 32rem;
+  }
+
+  .sm\:max-w-md {
+    max-width: 28rem;
+  }
+
+  .sm\:max-w-sm {
+    max-width: 24rem;
   }
 
   .sm\:grid-cols-2 {

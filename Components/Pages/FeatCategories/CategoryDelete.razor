@@ -3,7 +3,7 @@
 <div>
     <KonnButton Text="Delete Category" Danger="true" OnClick="(() => IsDeleteCategoryVisible = true)"/>
 
-    <KonnModal IsVisible="@IsDeleteCategoryVisible" OnClose="@(() => IsDeleteCategoryVisible = false)">
+    <KonnModal IsVisible="@IsDeleteCategoryVisible" OnClose="@(() => IsDeleteCategoryVisible = false)" Size="sm">
         <div class="flex flex-col space-y-[16px]">
             <div>
                 <div class="text-lg text-pText font-semibold">Delete Category</div>
@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <KonnButton Class="w-full" Danger Text="Delete Category" />
+            <KonnButton ClassName="w-full" Danger Text="Delete Category" />
         </div>
     </KonnModal>
 </div>

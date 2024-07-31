@@ -3,12 +3,18 @@
 @if (IsVisible)
 {
     <div class="fixed z-10" aria-labelledby="modal" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-black/20 transition-opacity" aria-hidden="true" @onclick="OnBackgroundClick"></div>
+        <div class="fixed inset-0 bg-black/20 transition-opacity" aria-hidden="true" @onclick="CloseClicked"></div>
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                <div class="relative transform rounded-[16px] bg-white border border-border text-left drop-shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="relative transform rounded-[16px] bg-white border border-border text-left drop-shadow-2xl transition-all sm:my-8 sm:w-full @ModalSizeClass">
                     <div class="h-full w-full rounded-[16px] overflow-hidden text-left drop-shadow-xl">
-                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="bg-white px-4 pb-4 pt-[30px] sm:p-6 sm:pb-4">
+                            <KonnButton IsIconOnly Variant="secondary" Size="sm" Circular ClassName="absolute top-[20px] right-[20px]" OnClick="@CloseClicked">
+                                <StartIcon>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#313640" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                                </StartIcon>
+                            </KonnButton>
+
                             @ChildContent
                         </div>
                     </div>
@@ -28,8 +34,19 @@
     [Parameter]
     public EventCallback OnClose { get; set; }
 
-    private async Task OnBackgroundClick()
+    [Parameter]
+    public string Size { get; set; } = "md"; // Default to medium size
+
+    private async Task CloseClicked()
     {
         await OnClose.InvokeAsync();
     }
+
+    private string ModalSizeClass => Size switch
+    {
+        "sm" => "sm:max-w-sm",
+        "md" => "sm:max-w-md",
+        "lg" => "sm:max-w-lg",
+        _ => "sm:max-w-md"
+    };
 }

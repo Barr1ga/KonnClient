@@ -1,5 +1,6 @@
 ﻿@using KonnClient.Data
 @using KonnClient.Data.Models
+@rendermode InteractiveServer
 @inject ILogger<ContactsList> Logger
 @inject IDbContextFactory<KonnDbContext> ContextFactory
 
@@ -14,10 +15,24 @@
             </span>
         </div>
 
-        <KonnButton Text="+ New Contact" />
-    </div>
+        <KonnButton Text="+ New Contact" OnClick="() => IsAddContactVisible = true" />
 
-    <InputText id="search" @bind-Value="@SearchValue" placeholder="Search a contact" class="px-[14px] py-[8px] border border-border rounded-[12px] transition-all easei-in-out bg-qBackground hover:bg-primary/10 focus:bg-pBackground cursor-pointer focus:cursor-text" />
+        <KonnModal IsVisible="@IsAddContactVisible" OnClose="@(() => IsAddContactVisible = false)">
+            <div class="flex flex-col space-y-[16px]">
+                <div>
+                    <div class="text-lg text-pText font-semibold">New Contact</div>
+                    <div class="text-sText/40 font-medium">
+                            Invite subscribers, contacts and past guests via email or SMS.
+                    </div>
+                </div>
+
+                <div>
+                    <ContactForm Method="Add" />
+                </div>
+            </div>
+        </KonnModal>
+    </div>
+        <InputText id="search" @bind-Value="@SearchValue" placeholder="Search a contact" class="px-[14px] py-[8px] border border-border rounded-[12px] transition-all easei-in-out bg-qBackground hover:bg-primary/10 focus:bg-pBackground cursor-pointer focus:cursor-text" />
 
     <div class="flex flex-col space-y-[12px]">
        <Virtualize Context="contact" ItemsProvider="LoadContacts" OverscanCount="6">
@@ -43,6 +58,8 @@
     public int WorkspaceId { get; set; }
 
     public string SearchValue { get; set; } = string.Empty;
+
+    public bool IsAddContactVisible { get; set; } = false;
 
     private async ValueTask<ItemsProviderResult<Contact>> LoadContacts(ItemsProviderRequest request)
     {

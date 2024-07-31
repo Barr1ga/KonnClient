@@ -1,0 +1,111 @@
+﻿@using KonnClient.Data.Dto
+@inject ILogger<ContactForm> Logger
+@inject NavigationManager Navigation
+@inject IConfiguration Configuration
+
+<EditForm Model="SignInData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" FormName="SignInModel" class="w-full flex flex-col gap-y-[24px]">
+    <DataAnnotationsValidator />
+
+    <div class="flex flex-col space-y-[12px] overflow-hidden">
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="email">
+                Name
+            </label>
+            <InputText id="email" @bind-Value="@SignInData.Email" placeholder="Your name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignInData.Email)" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="password">
+                Pronounciation
+            </label>
+            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="Pronounciation" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignInData.Password)" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="password">
+                Email
+            </label>
+            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignInData.Password)" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="password">
+                Phone
+            </label>
+            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="xxx-xxxx-xxxx" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignInData.Password)" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="password">
+                Telephone
+            </label>
+            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="xxx-xxxx" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignInData.Password)" />
+        </div>
+
+        <div class="flex flex-col space-y-[4px]">
+            <label class="font-medium" for="password">
+                Notes
+            </label>
+            <InputText id="password" @bind-Value="@SignInData.Password" placeholder="Leave a note" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => SignInData.Password)" />
+        </div>
+
+        <div class="flex bg-pBackground rounded-[12px] items-start border border-white">
+            <div class="flex flex-col w-full gap-y-[8px]">
+                <span class="font-medium text-pText">
+                    Add to favorites
+                </span>
+
+                <span class="text-sText/50">
+                    Enabling this feature will mark this contact as one of your favorite contacts
+                </span>
+            </div>
+
+            <KonnSwitch Value="false" OnSwitchClicked="HandleSwitchClicked" />
+        </div>
+
+        <div class="flex items-start border border-white">
+            <div class="flex-1">
+                <div class="font-medium text-pText">
+                    Mark as emergency
+                </div>
+
+                <div class="text-sText/50">
+                    Enabling this feature will mark this contact as one of your emergency contacts
+                </div>
+            </div>
+
+            <KonnSwitch Value="false" OnSwitchClicked="HandleSwitchClicked" />
+        </div>
+    </div>
+
+    <KonnButton Text="@($"{Method} Contact")" Type="primary" ClassName="w-full" />
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    public SignInDto? SignInData { get; set; } = new SignInDto();
+
+    [Parameter]
+    public string Method { get; set; } = "Add"; // New / Update
+
+    protected override void OnInitialized() => SignInData ??= new();
+
+    private void HandleSwitchClicked(bool value)
+    {
+    }
+
+    private void OnValidSubmit()
+    {
+        Logger.LogInformation("Attempting to sign in with Email = {Email}", SignInData?.Email);
+    }
+
+    private void OnInvalidSubmit()
+    {
+    }
+}

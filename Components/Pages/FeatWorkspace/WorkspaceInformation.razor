@@ -48,10 +48,9 @@
 
     private void UpdateSelectedTab(string uri)
     {
-        var segments = new Uri(uri).Segments;
-        var tab = segments.LastOrDefault()?.Trim('/');
-
-        if (tab != null && TabOptions.Any(t => t.Value == tab))
+        var tab = TabOptions.FirstOrDefault(t => uri.Contains($"/{t.Value}"))?.Value;
+        
+        if (tab != null)
         {
             SelectedTab = tab;
         }

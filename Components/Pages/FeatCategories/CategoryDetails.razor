@@ -1,57 +1,43 @@
-﻿@page "/workspace/{WorkspaceId:int}/contacts/{ContactId:int}"
+﻿@page "/workspace/{WorkspaceId:int}/categories/{CategoryId:int}"
 @using KonnClient.Components.Pages.FeatContact
 @using KonnClient.Components.Pages.FeatWorkspace
 @using KonnClient.Data
 @using KonnClient.Data.Models
 @using static KonnClient.Components.Shared.KonnTabs
-@rendermode InteractiveServer
 @inject NavigationManager Navigation
-@inject ILogger<ContactDetails> Logger
+@rendermode InteractiveServer
+@inject ILogger<CategoryDetails> Logger
+@inject NavigationManager Navigation
 @inject IDbContextFactory<KonnDbContext> ContextFactory
 
 <PageTitle>@Workspace?.Name</PageTitle>
 
 <div class="flex flex-col gap-y-[32px] w-full pb-[80px]">
     <WorkspaceInformation Workspace="@Workspace"/>
-     
-    @if (Contact != null) {
+
+    @if (Category != null)
+    {
         <div class="flex w-full gap-y-[32px] flex flex-col items-center">
             <div class="space-y-[24px] max-w-[800px] w-full">
                 <div class="flex items-center gap-x-[8px]">
-                    <NavLink href="@($"/workspace/{WorkspaceId}/overview")" Match="NavLinkMatch.All">
+                    <NavLink href="@($"/workspace/{WorkspaceId}/categories")" Match="NavLinkMatch.All">
                         <span class="text-2xl text-pText font-bold">
                             ←
                         </span>
                     </NavLink>
 
                     <span class="text-lg text-pText font-semibold">
-                        Contact Information
+                        Category Information
                     </span>
                 </div>
-            
-                <ContactInformation Contact="@Contact" />
+
+                <CategoryInformation Category="@Category" />
 
                 <div class="h-[1px] bg-border w-full max-w-[800px]" />
 
                 <div class="flex flex-col gap-y-[4px]">
                     <span class="text-lg text-pText font-semibold">
-                        Transfer Contact
-                    </span>
-
-                    <span class="text-sText/50 pb-[8px]">
-                        This event is managed by asdasdasd, with the admins of the calendar having manage access to the event. You can move it to a different calendar.
-                    </span>
-
-                    <div class="">
-                        <KonnButton Text="Move to another Workspace" />
-                    </div>
-                </div>
-            
-                <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-                <div class="flex flex-col gap-y-[4px]">
-                    <span class="text-lg text-pText font-semibold">
-                        Clone Contact
+                        Clone Category
                     </span>
 
                     <span class="text-sText/50 pb-[8px]">
@@ -59,7 +45,7 @@
                     </span>
 
                     <div class="">
-                        <KonnButton Text="Clone Contact" />
+                        <KonnButton Text="Clone Category" />
                     </div>
                 </div>
 
@@ -67,7 +53,7 @@
 
                 <div class="flex flex-col gap-y-[4px]">
                     <span class="text-lg text-pText font-semibold">
-                        Delete Contact
+                        Delete Category
                     </span>
 
                     <span class="text-sText/50 pb-[8px]">
@@ -75,20 +61,14 @@
                     </span>
 
                     <div class="">
-                        <KonnButton Text="Delete Contact" Danger="true" />
+                        <KonnButton Text="Delete Category" Danger="true" />
                     </div>
                 </div>
 
                 <div class="h-[1px] bg-border w-full max-w-[800px]" />
 
                 <div class="flex flex-col gap-y-[4px]">
-                    <span class="text-sText/40 font-medium text-[14px]">Learn more about managing contacts</span>
-                </div>
-          
-                <div class="h-[1px] bg-border w-full max-w-[800px]" />
-
-                <div class="space-y-[24px] max-w-[800px] w-full">
-                    <ContactsRecentList WorkspaceId="@WorkspaceId" />
+                    <span class="text-sText/40 font-medium text-[14px]">Learn more about managing categories</span>
                 </div>
             </div>
         </div>
@@ -100,11 +80,11 @@
     public int WorkspaceId { get; set; }
 
     [Parameter]
-    public int ContactId { get; set; }
+    public int CategoryId { get; set; }
 
     public Workspace? Workspace { get; set; }
 
-    public Contact? Contact { get; set; }
+    public Category? Category { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -113,7 +93,8 @@
             using var _context = ContextFactory.CreateDbContext();
 
             Workspace = await _context.Workspaces.FindAsync(WorkspaceId);
-                Contact = await _context.Contacts.FindAsync(ContactId);
+            Category = await _context.Categories.FindAsync(CategoryId);
+
         }
         catch (Exception ex)
         {

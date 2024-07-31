@@ -1,0 +1,90 @@
+﻿@using KonnClient.Data.Models
+@rendermode InteractiveServer
+
+<div class="flex flex-col gap-y-[20px] w-full">
+    <div
+        class="w-full flex items-start justify-between bg-pBackground gap-x-[8px] p-[20px] rounded-[12px] border border-white">
+            <div class="flex flex-col gap-x-[10px]">
+                <span class="font-semibold text-[24px] text-pText">
+                    @Category.Name
+                </span>
+            </div>
+    </div>
+    <div
+        class="w-full flex flex-col gap-y-[8px] bg-pBackground gap-x-[8px] p-[20px] rounded-[12px] border border-white">
+         <span class="truncate text-sText/50">
+                Color
+            </span>
+
+        <div class="flex gap-x-[16px] items-center">
+            <div style="background-color: @Category.Color" class="h-[60px] w-[60px] rounded-[12px] border border-border flex items-center justify-center drop-shadow-xl" />
+
+            <div class="flex flex-col gap-[6px]">
+                <div class="flex gap-[6px]">
+                    @foreach (var color in ColorOptions1)
+                    {
+                        <div style="background-color: @color" class="h-[26px] w-[26px] rounded-[8px] border border-border flex items-center justify-center" />
+                    }
+                </div>
+                <div class="flex gap-[6px]">
+                    @foreach (var color in ColorOptions2)
+                    {
+                        <div style="background-color: @color" class="h-[26px] w-[26px] rounded-[8px] border border-border flex items-center justify-center" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-y-[8px]">
+        <div class="flex flex-col w-full bg-pBackground px-[20px] py-[16px] rounded-[12px] gap-y-[8px] border border-white">
+            <span class="truncate text-sText/50">
+                Description
+            </span>
+
+            <span class="font-medium truncate text-pText">
+                @Category.Description
+            </span>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-y-[8px]">
+        <span class="truncate text-sText/50">
+            Audit Information
+        </span>
+
+        <div
+            class="flex flex-col w-full bg-pBackground px-[20px] py-[16px] rounded-[12px] gap-y-[8px] border border-white">
+            <span class="truncate text-sText/50">
+                Date Added
+            </span>
+
+            <span class="font-medium truncate text-pText">
+                Last @Category.CreatedAt
+            </span>
+        </div>
+
+        <div
+            class="flex flex-col w-full bg-pBackground px-[20px] py-[16px] rounded-[12px] gap-y-[8px] border border-white">
+            <span class="truncate text-sText/50">
+                Last Updated
+            </span>
+
+            <span class="font-medium truncate text-pText">
+                Last @Category.UpdatedAt
+            </span>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public Category Category { get; set; } = default!;
+
+    public List<string> ColorOptions1 = new List<string>([
+        "#006FEE", "#7828C8", "#17C964", "#F31260", "#FF4ECD", "#F5A524", "#7EE7FC", "#71717A"
+    ]);
+
+    public List<string> ColorOptions2 = new List<string>([
+        "#004493", "#481878", "#0E793C", "#920B3A", "#992F7B", "#936316", "#09AACD", "#3F3F46"
+    ]);
+} 

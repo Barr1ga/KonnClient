@@ -34,12 +34,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoriesDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yaWVzRGV0YWlscy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoriesList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yaWVzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoryDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yeURldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoryInformation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGZWF0Q2F0ZWdvcmllc1xDYXRlZ29yeUluZm9ybWF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/Documents/GitHub/KonnClient/Components/Pages/FeatCategories/CategoryRow.razor]

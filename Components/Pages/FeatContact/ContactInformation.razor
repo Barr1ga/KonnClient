@@ -4,27 +4,46 @@
 <div class="flex flex-col gap-y-[20px] w-full">
     <div
         class="w-full flex items-start justify-between bg-pBackground gap-x-[8px] p-[20px] rounded-[12px] border border-white">
-        <div class="flex gap-x-[16px] items-center">
-            <div
-                class="h-[80px] w-[80px] rounded-[12px] border border-border bg-tBackground flex items-center justify-center drop-shadow-xl">
-            </div>
+        <div class="flex gap-x-[16px] items-start w-full">
+            <div class="flex gap-x-[16px] items-center w-full flex-1">
+                <div
+                    class="h-[80px] w-[80px] rounded-[12px] border border-border bg-tBackground flex items-center justify-center drop-shadow-xl">
+                </div>
 
-            <div class="flex flex-col gap-x-[10px]">
-                <span class="font-semibold text-[24px] text-pText">
-                    @Contact.Name
-                </span>
+                <div class="flex h-full flex-col gap-x-[10px] flex-1 justify-center">
+                    <span class="font-semibold text-[24px] text-pText">
+                        @Contact.Name
+                    </span>
 
-                <span class="truncate text-sText/50">
-                    @Contact.Email
-                </span>
+                    <span class="truncate text-sText/50">
+                        @Contact.Email
+                    </span>
 
-                <div class="flex gap-[4px] items-center mt-[6px] flex-wrap">
-                    @foreach (var category in Contact.ContactCategories)
-                    {
-                        <KonnTag Color="@category.Category.Color" Text="@category.Category.Name" />
-                    }
+                    <div class="flex gap-[4px] items-center mt-[6px] flex-wrap">
+                        @foreach (var category in Contact.ContactCategories)
+                        {
+                            <KonnTag Color="@category.Category.Color" Text="@category.Category.Name" />
+                        }
+                    </div>
                 </div>
             </div>
+
+            <KonnButton Text="Edit Contact" OnClick="() => IsUpdateContactVisible = true" Variant="secondary" />
+
+            <KonnModal IsVisible="@IsUpdateContactVisible" OnClose="@(() => IsUpdateContactVisible = false)">
+                <div class="flex flex-col space-y-[16px]">
+                    <div>
+                        <div class="text-lg text-pText font-semibold">New Contact</div>
+                        <div class="text-sText/40 font-medium">
+                            Invite subscribers, contacts and past guests via email or SMS.
+                        </div>
+                    </div>
+
+                    <div>
+                        <ContactForm Method="Update" DefaultValues="@Contact" />
+                    </div>
+                </div>
+            </KonnModal>
         </div>
     </div>
 
@@ -135,6 +154,8 @@
 
 @code {
     [Parameter] public Contact Contact { get; set; } = default!;
+
+    public bool IsUpdateContactVisible { get; set; } = false;
 
     public bool IsEmergency { get; set; } = false;
 

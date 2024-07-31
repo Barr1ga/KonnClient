@@ -3,96 +3,117 @@
 @inject NavigationManager Navigation
 @inject IConfiguration Configuration
 
-<EditForm Model="ContactData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" FormName="ContactModel" class="w-full flex flex-col gap-y-[24px]">
-    <DataAnnotationsValidator />
-
-    <div class="flex flex-col space-y-[12px] overflow-hidden">
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Name">
-                Name
-            </label>
-            <InputText id="Name" @bind-Value="@ContactData.Name" placeholder="Your name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Name)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Pronounciation">
-                Pronounciation
-            </label>
-            <InputText id="Pronounciation" @bind-Value="@ContactData.Pronounciation" placeholder="Pronounciation" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Pronounciation)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Email">
-                Email
-            </label>
-            <InputText id="Email" @bind-Value="@ContactData.Email" placeholder="you@email.com" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Email)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Phone">
-                Phone
-            </label>
-            <InputText id="Phone" @bind-Value="@ContactData.Phone" placeholder="xxx-xxxx-xxxx" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Phone)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Telephone">
-                Telephone
-            </label>
-            <InputText id="Telephone" @bind-Value="@ContactData.Telephone" placeholder="xxx-xxxx" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Telephone)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Notes">
-                Notes
-            </label>
-            <InputTextArea id="Notes" @bind-Value="@ContactData.Notes" placeholder="Leave a note" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Notes)" />
-        </div>
-
-        <div class="py-[16px]">
-            <div class="h-[1px] bg-border w-full max-w-[800px]" />
-        </div>
-
-        <div class="flex bg-pBackground rounded-[12px] items-start border border-white">
-            <div class="flex flex-col w-full gap-y-[8px]">
-                <span class="font-medium text-pText">
-                    Add to favorites
-                </span>
-
-                <span class="text-sText/50">
-                    Enabling this feature will mark this contact as one of your favorite contacts
-                </span>
-            </div>
-
-            <KonnSwitch Value="@(ContactData.IsFavorite ?? false)" OnSwitchClicked="(() => ContactData.IsFavorite = !ContactData.IsFavorite)" />
-        </div>
-
-        <div class="flex items-start border border-white">
-            <div class="flex-1">
-                <div class="font-medium text-pText">
-                    Mark as emergency
-                </div>
-
-                <div class="text-sText/50">
-                    Enabling this feature will mark this contact as one of your emergency contacts
-                </div>
-            </div>
-
-            <KonnSwitch Value="@(ContactData.IsEmergency ?? false)" OnSwitchClicked="(() => ContactData.IsEmergency = !ContactData.IsEmergency)" />
+<div class="flex flex-col space-y-[16px]">
+    <div>
+        <div class="text-lg font-semibold text-pText">@Method Contact</div>
+        <div class="font-medium text-sText/40">
+            Invite subscribers, contacts and past guests via email or SMS.
         </div>
     </div>
 
-    <div class="flex flex-col gap-y-[8px]">
-        <KonnButton Text="@($"{Method} Contact")" ClassName="w-full" />
-        <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="OnCancelClicked" />
+    <div>
+        <EditForm Model="ContactData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit"
+            FormName="ContactModel" class="w-full flex flex-col gap-y-[24px]">
+            <DataAnnotationsValidator />
+
+            <div class="flex flex-col space-y-[12px] overflow-hidden">
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Name">
+                        Name
+                    </label>
+                    <InputText id="Name" @bind-Value="@ContactData.Name" placeholder="Your name"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => ContactData.Name)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Pronounciation">
+                        Pronounciation
+                    </label>
+                    <InputText id="Pronounciation" @bind-Value="@ContactData.Pronounciation"
+                        placeholder="Pronounciation"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => ContactData.Pronounciation)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Email">
+                        Email
+                    </label>
+                    <InputText id="Email" @bind-Value="@ContactData.Email" placeholder="you@email.com"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => ContactData.Email)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Phone">
+                        Phone
+                    </label>
+                    <InputText id="Phone" @bind-Value="@ContactData.Phone" placeholder="xxx-xxxx-xxxx"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => ContactData.Phone)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Telephone">
+                        Telephone
+                    </label>
+                    <InputText id="Telephone" @bind-Value="@ContactData.Telephone" placeholder="xxx-xxxx"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => ContactData.Telephone)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Notes">
+                        Notes
+                    </label>
+                    <InputTextArea id="Notes" @bind-Value="@ContactData.Notes" placeholder="Leave a note"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => ContactData.Notes)" />
+                </div>
+
+                <div class="py-[16px]">
+                    <div class="h-[1px] bg-border w-full max-w-[800px]" />
+                </div>
+
+                <div class="flex bg-pBackground rounded-[12px] items-start border border-white">
+                    <div class="flex flex-col w-full gap-y-[8px]">
+                        <span class="font-medium text-pText">
+                            Add to favorites
+                        </span>
+
+                        <span class="text-sText/50">
+                            Enabling this feature will mark this contact as one of your favorite contacts
+                        </span>
+                    </div>
+
+                    <KonnSwitch Value="@(ContactData.IsFavorite ?? false)"
+                        OnSwitchClicked="(() => ContactData.IsFavorite = !ContactData.IsFavorite)" />
+                </div>
+
+                <div class="flex items-start border border-white">
+                    <div class="flex-1">
+                        <div class="font-medium text-pText">
+                            Mark as emergency
+                        </div>
+
+                        <div class="text-sText/50">
+                            Enabling this feature will mark this contact as one of your emergency contacts
+                        </div>
+                    </div>
+
+                    <KonnSwitch Value="@(ContactData.IsEmergency ?? false)"
+                        OnSwitchClicked="(() => ContactData.IsEmergency = !ContactData.IsEmergency)" />
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-y-[8px]">
+                <KonnButton Text="@($"{Method} Contact")" ClassName="w-full" />
+                <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="OnCancelClicked" />
+            </div>
+        </EditForm>
     </div>
-</EditForm>
+</div>
 
 @code {
     [SupplyParameterFromForm]

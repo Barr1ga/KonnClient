@@ -33,18 +33,7 @@
             </KonnButton>
 
             <KonnModal IsVisible="@IsUpdateContactVisible" OnClose="@(() => IsUpdateContactVisible = false)">
-                <div class="flex flex-col space-y-[16px]">
-                    <div>
-                        <div class="text-lg text-pText font-semibold">New Contact</div>
-                        <div class="text-sText/40 font-medium">
-                            Invite subscribers, contacts and past guests via email or SMS.
-                        </div>
-                    </div>
-
-                    <div>
-                        <ContactForm Method="Update" DefaultValues="@Contact" OnCancel="OnCancel" />
-                    </div>
-                </div>
+               <ContactForm Method="Update" DefaultValues="@Contact" OnCancel="OnCancel" />
             </KonnModal>
         </div>
     </div>

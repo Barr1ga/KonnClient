@@ -3,40 +3,56 @@
 @inject NavigationManager Navigation
 @inject IConfiguration Configuration
 
-<EditForm Model="CategoryData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" FormName="CategoryModel" class="w-full flex flex-col gap-y-[24px]">
-    <DataAnnotationsValidator />
-
-    <div class="flex flex-col space-y-[12px] overflow-hidden">
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Name">
-                Name
-            </label>
-            <InputText id="Name" @bind-Value="@CategoryData.Name" placeholder="Your name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => CategoryData.Name)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Description">
-                Description
-            </label>
-            <InputTextArea id="Description" @bind-Value="@CategoryData.Description" placeholder="Describe this category" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out " />
-            <ValidationMessage class="text-danger" For="@(() => CategoryData.Description)" />
-        </div>
-
-        <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="Color">
-                Color
-            </label>
-            <InputText id="Color" @bind-Value="@CategoryData.Color" placeholder="Color" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => CategoryData.Color)" />
+<div class="flex flex-col space-y-[16px]">
+    <div>
+        <div class="text-lg font-semibold text-pText">@Method Category</div>
+        <div class="font-medium text-sText/40">
+            Invite subscribers, contacts and past guests via email or SMS.
         </div>
     </div>
 
-    <div class="flex flex-col gap-y-[8px]">
-        <KonnButton Text="@($"{Method} Category")" ClassName="w-full" />
-        <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="OnCancelClicked" />
+    <div>
+        <EditForm Model="CategoryData" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit"
+            FormName="CategoryModel" class="w-full flex flex-col gap-y-[24px]">
+            <DataAnnotationsValidator />
+
+            <div class="flex flex-col space-y-[12px] overflow-hidden">
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Name">
+                        Name
+                    </label>
+                    <InputText id="Name" @bind-Value="@CategoryData.Name" placeholder="Your name"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => CategoryData.Name)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Description">
+                        Description
+                    </label>
+                    <InputTextArea id="Description" @bind-Value="@CategoryData.Description"
+                        placeholder="Describe this category"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out " />
+                    <ValidationMessage class="text-danger" For="@(() => CategoryData.Description)" />
+                </div>
+
+                <div class="flex flex-col space-y-[4px]">
+                    <label class="font-medium" for="Color">
+                        Color
+                    </label>
+                    <InputText id="Color" @bind-Value="@CategoryData.Color" placeholder="Color"
+                        class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+                    <ValidationMessage class="text-danger" For="@(() => CategoryData.Color)" />
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-y-[8px]">
+                <KonnButton Text="@($"{Method} Category")" ClassName="w-full" />
+                <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="OnCancelClicked" />
+            </div>
+        </EditForm>
     </div>
-</EditForm>
+</div>
 
 @code {
     [SupplyParameterFromForm]

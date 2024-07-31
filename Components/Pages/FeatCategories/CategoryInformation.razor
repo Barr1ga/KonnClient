@@ -14,18 +14,7 @@
         </KonnButton>
 
         <KonnModal IsVisible="@IsUpdateCategoryVisible" OnClose="@(() => IsUpdateCategoryVisible = false)">
-                <div class="flex flex-col space-y-[16px]">
-                    <div>
-                        <div class="text-lg text-pText font-semibold">New Category</div>
-                        <div class="text-sText/40 font-medium">
-                            Invite subscribers, contacts and past guests via email or SMS.
-                        </div>
-                    </div>
-
-                    <div>
-                    <CategoryForm Method="Update" DefaultValues="@Category" OnCancel="(() => IsUpdateCategoryVisible = false)" />
-                    </div>
-                </div>
+           <CategoryForm Method="Update" DefaultValues="@Category" OnCancel="(() => IsUpdateCategoryVisible = false)" />
         </KonnModal>
     </div>
     <div

@@ -12,7 +12,10 @@
                 </div>
             </div>
 
-            <KonnButton ClassName="w-full" Danger Text="Delete Category" />
+            <div class="flex flex-col gap-y-[8px]">
+                <KonnButton ClassName="w-full" Danger Text="Delete Category" />
+                <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="@(() => IsDeleteCategoryVisible = false)" />
+            </div>
         </div>
     </KonnModal>
 </div>

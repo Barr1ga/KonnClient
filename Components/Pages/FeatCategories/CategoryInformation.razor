@@ -9,6 +9,24 @@
                     @Category.Name
                 </span>
             </div>
+
+        <KonnButton Text="Edit Contact" OnClick="() => IsUpdateCategoryVisible = true" Variant="secondary">
+        </KonnButton>
+
+        <KonnModal IsVisible="@IsUpdateCategoryVisible" OnClose="@(() => IsUpdateCategoryVisible = false)">
+                <div class="flex flex-col space-y-[16px]">
+                    <div>
+                        <div class="text-lg text-pText font-semibold">New Category</div>
+                        <div class="text-sText/40 font-medium">
+                            Invite subscribers, contacts and past guests via email or SMS.
+                        </div>
+                    </div>
+
+                    <div>
+                    <CategoryForm Method="Update" DefaultValues="@Category" OnCancel="(() => IsUpdateCategoryVisible = false)" />
+                    </div>
+                </div>
+        </KonnModal>
     </div>
     <div
         class="w-full flex flex-col gap-y-[8px] bg-pBackground gap-x-[8px] p-[20px] rounded-[12px] border border-white">
@@ -87,4 +105,9 @@
     public List<string> ColorOptions2 = new List<string>([
         "#004493", "#481878", "#0E793C", "#920B3A", "#992F7B", "#936316", "#09AACD", "#3F3F46"
     ]);
+
+    public bool IsUpdateCategoryVisible { get; set; } = false;
+
+    public bool IsEmergency { get; set; } = false;
+
 } 

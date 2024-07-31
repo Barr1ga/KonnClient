@@ -8,11 +8,11 @@
 
     <div class="flex flex-col space-y-[12px] overflow-hidden">
         <div class="flex flex-col space-y-[4px]">
-            <label class="font-medium" for="email">
+            <label class="font-medium" for="Name">
                 Name
             </label>
-            <InputText id="email" @bind-Value="@ContactData.Email" placeholder="Your name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
-            <ValidationMessage class="text-danger" For="@(() => ContactData.Email)" />
+            <InputText id="Name" @bind-Value="@ContactData.Name" placeholder="Your name" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <ValidationMessage class="text-danger" For="@(() => ContactData.Name)" />
         </div>
 
         <div class="flex flex-col space-y-[4px]">
@@ -51,7 +51,7 @@
             <label class="font-medium" for="Notes">
                 Notes
             </label>
-            <InputText id="Notes" @bind-Value="@ContactData.Notes" placeholder="Leave a note" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
+            <InputTextArea id="Notes" @bind-Value="@ContactData.Notes" placeholder="Leave a note" class="px-[14px] py-[8px] border border-border focus:border-pText hover:border-sText rounded-[12px] transition-all easei-in-out" />
             <ValidationMessage class="text-danger" For="@(() => ContactData.Notes)" />
         </div>
 
@@ -102,17 +102,15 @@
     public Contact? DefaultValues { get; set; } = null;
 
     [Parameter]
-    public string Method { get; set; } = "Add"; // New / Update
+    public string Method { get; set; } = "Add";
 
     [Parameter]
     public EventCallback OnCancel { get; set; }
 
     protected override void OnInitialized()
     {
-        // Ensure ContactData is initialized
         ContactData ??= new ContactCreateDto();
 
-        // Update ContactData with DefaultValues if DefaultValues is not null
         if (Method == "Update" && DefaultValues != null)
         {
             ContactData.Email = DefaultValues.Email;
@@ -127,7 +125,6 @@
 
     private void OnValidSubmit()
     {
-        Logger.LogInformation("Attempting to sign in with Email = {Email}", ContactData?.Email);
     }
 
     private void OnInvalidSubmit()

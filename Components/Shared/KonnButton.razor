@@ -37,7 +37,7 @@
     [Parameter] public bool IsIconOnly { get; set; } = false;
     [Parameter] public string Size { get; set; } = "md";
     [Parameter] public string Justify { get; set; } = "center";
-    [Parameter] public string ClassName { get; set; } = "";
+    [Parameter] public string Class { get; set; } = "";
     [Parameter] public bool Highlight { get; set; } = false;
 
     private string GetButtonCssClass()
@@ -69,7 +69,7 @@
         var disabled = (Disabled ? "opacity-50" : "");
         var bordered = Bordered ? "border" : "";
 
-        return $"group gap-x-[6px] {btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {ClassName} transition-all ease-in-out";
+        return $"group gap-x-[6px] {btnColor} {circular} {disabled} {bordered} {btnSize} flex items-center justify-{Justify} {Class} transition-all ease-in-out";
     }
 
 

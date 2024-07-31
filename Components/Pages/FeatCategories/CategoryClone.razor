@@ -1,0 +1,28 @@
+﻿@rendermode InteractiveServer
+
+<div>
+    <KonnButton Text="Clone Category" OnClick="(() => IsCloneCategoryVisible = true)"/>
+
+    <KonnModal IsVisible="@IsCloneCategoryVisible" OnClose="@(() => IsCloneCategoryVisible = false)">
+        <div class="flex flex-col space-y-[16px]">
+            <div>
+                <div class="text-lg text-pText font-semibold">Clone Category</div>
+                <div class="text-sText/40 font-medium">
+                    Invite subscribers, contacts and past guests via email or SMS.
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-y-[8px]">
+                <KonnButton Class="w-full" Text="Clone Category" />
+                <KonnButton Text="Cancel" Variant="secondary" ClassName="w-full" OnClick="@(() => IsCloneCategoryVisible = false)" />
+            </div>
+        </div>
+    </KonnModal>
+</div>
+
+@code {
+    [Parameter]
+    public int CategoryId { get; set; } = default!;
+
+    public bool IsCloneCategoryVisible { get; set; } = false;
+}

@@ -3,7 +3,7 @@
 @if (IsVisible)
 {
     <div class="fixed z-10" aria-labelledby="modal" role="dialog" aria-modal="true">
-        <button class="fixed inset-0 bg-black/20 transition-opacity" aria-hidden="true" @onclick="OnBackgroundClick"></button>
+        <div class="fixed inset-0 bg-black/20 transition-opacity" aria-hidden="true" @onclick="OnBackgroundClick"></div>
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                 <div class="relative transform rounded-[16px] bg-white border border-border text-left drop-shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">

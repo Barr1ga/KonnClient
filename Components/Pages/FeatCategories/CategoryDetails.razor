@@ -44,9 +44,7 @@
                         Create a new event with the same information as this one. Everything except the guest list and event posts will be copied over.
                     </span>
 
-                    <div class="">
-                        <KonnButton Text="Clone Category" />
-                    </div>
+                    <CategoryClone CategoryId="@CategoryId" />
                 </div>
 
                 <div class="h-[1px] bg-border w-full max-w-[800px]" />
@@ -60,9 +58,7 @@
                         Cancel and permanently delete this event. This operation cannot be undone. If there are any registered guests, we will notify them that the event has been cancelled.
                     </span>
 
-                    <div class="">
-                        <KonnButton Text="Delete Category" Danger="true" />
-                    </div>
+                    <CategoryDelete CategoryId="@CategoryId" />
                 </div>
 
                 <div class="h-[1px] bg-border w-full max-w-[800px]" />
@@ -85,6 +81,10 @@
     public Workspace? Workspace { get; set; }
 
     public Category? Category { get; set; }
+
+    public bool IsCloneCategoryVisible { get; set; } = false;
+
+   
 
     protected override async Task OnInitializedAsync()
     {

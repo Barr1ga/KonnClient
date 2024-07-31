@@ -14,7 +14,26 @@
             </span>
         </div>
 
-        <KonnButton Text="+ New Category" />
+        <KonnButton Text="New Category" OnClick="() => IsAddCategoryVisible = true">
+            <StartIcon>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
+            </StartIcon>
+        </KonnButton>
+
+        <KonnModal IsVisible="@IsAddCategoryVisible" OnClose="@(() => IsAddCategoryVisible = false)">
+            <div class="flex flex-col space-y-[16px]">
+                <div>
+                    <div class="text-lg text-pText font-semibold">New Contact</div>
+                    <div class="text-sText/40 font-medium">
+                            Invite subscribers, contacts and past guests via email or SMS.
+                    </div>
+                </div>
+
+                <div>
+                    <CategoryForm Method="Add" OnCancel="OnCancel" />
+                </div>
+            </div>
+        </KonnModal>
     </div>
 
     <div class="relative">
@@ -47,6 +66,13 @@
     public int WorkspaceId { get; set; }
 
     public string SearchValue { get; set; } = string.Empty;
+
+    public bool IsAddCategoryVisible { get; set; } = false;
+
+    private void OnCancel()
+    {
+        IsAddCategoryVisible = false;
+    }
 
     private async ValueTask<ItemsProviderResult<Category>> LoadCategories(ItemsProviderRequest request)
     {
